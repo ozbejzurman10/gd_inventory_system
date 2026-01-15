@@ -45,6 +45,13 @@ public partial class Main : Node2D
         editor_inv.UseItem(0);
         editor_inv.UseItem(1);
         editor_inv.UseItem(2);
+
+        // Preobleganje operatorjev
+        GD.Print(" --- Combining two items:");
+        InventoryItem combinedItem = simpleitem + potion;
+        UseInventoryItem(combinedItem);
+
+        GD.Print("Total Items Created: " + InventoryItem.TotalItemsCreated);
     }
 
     private void UseInventoryItem(InventoryItem item)
