@@ -6,35 +6,39 @@ public partial class Inventory : Resource
 {
     // vedno empty array kot default, da ne dobimo null reference exceptiona
     [Export]
-    public InventoryItem[] Items { get; set; } = Array.Empty<InventoryItem>();
+    public InventorySlot[] ItemSlots { get; set; } = Array.Empty<InventorySlot>();
 
-
-    public void AddItem(InventoryItem item)
+    // Doda item v inventory. Najde prvi prosti slot
+    public void AddItem(InventoryItem item, int amount)
     {
         // Dodaj item v prvi prosti slot
-        for (int i = 0; i < Items.Length; i++)
+        for (int i = 0; i < ItemSlots.Length; i++)
         {
-            // Ce je slot prazen, dodaj item
-            if (Items[i] == null)
+            // Ce je slot prazen dodaj item
+            if (ItemSlots[i] == null)
             {
-                Items[i] = item;
-                GD.Print($"Added item {item.Name} to slot {i}");
+                ItemSlots[i].item = item;
+                ItemSlots[i].amount = amount;
+
+                GD.Print($"Added {amount} of item {item.Name} to slot {i}");
                 return;
             }
         }
-        GD.Print("No free slot available to add the item!");
+        GD.PrintErr("Inventory FULL! No free slot available to add the item!");
     }
 
+    // BRISI
+    /*
     public void UseItem(int index)
     {
         // Uporabi item na dolocenem indexu
-        if (index < 0 || index >= Items.Length)
+        if (index < 0 || index >= ItemSlots.Length)
         {
             GD.Print("Invalid index!");
             return;
         }
 
-        InventoryItem item = Items[index];
+        InventoryItem item = ItemSlots[index].item;
         if (item != null)
         {
             item.UseItem();
@@ -44,6 +48,7 @@ public partial class Inventory : Resource
             GD.Print("No item in the selected slot to use!");
         }
     }
+    
 
     public void PrintAllItems()
     {
@@ -61,4 +66,5 @@ public partial class Inventory : Resource
             }
         }
     }
+    */
 }

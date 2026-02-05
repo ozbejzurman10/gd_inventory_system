@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://d371eyxh52dg3"]
+
+[ext_resource type="Texture2D" uid="uid://c4fpiighmv8yg" path="res://Test Art/Eye_of_Rah.webp" id="1_ultla"]
+[ext_resource type="Script" uid="uid://bywxvlht4yxl3" path="res://Scripts/Inventory Item/InventoryItem.cs" id="1_x7ciq"]
+
+[resource]
+script = ExtResource("1_x7ciq")
+Name = "Eye Of Rah"
+Texture = ExtResource("1_ultla")
+rarity = 1
+metadata/_custom_type_script = "uid://bywxvlht4yxl3"

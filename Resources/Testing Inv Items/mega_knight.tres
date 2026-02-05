@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://di2mlpycssqf7"]
+
+[ext_resource type="Texture2D" uid="uid://b6iyyb4fuak3l" path="res://Test Art/meganigk.webp" id="1_fpo22"]
+[ext_resource type="Script" uid="uid://bywxvlht4yxl3" path="res://Scripts/Inventory Item/InventoryItem.cs" id="1_y558n"]
+
+[resource]
+script = ExtResource("1_y558n")
+Name = "Mega Knight"
+Texture = ExtResource("1_fpo22")
+rarity = 5
+metadata/_custom_type_script = "uid://bywxvlht4yxl3"

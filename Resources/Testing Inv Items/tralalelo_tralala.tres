@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cank8d2s62l46"]
+
+[ext_resource type="Script" uid="uid://bywxvlht4yxl3" path="res://Scripts/Inventory Item/InventoryItem.cs" id="1_pidh2"]
+[ext_resource type="Texture2D" uid="uid://dvklwqbejyrtp" path="res://Test Art/Tralalero-Tralala-Plush-1.png" id="1_sn6fs"]
+
+[resource]
+script = ExtResource("1_pidh2")
+Name = "Tralalalo Tralala"
+Texture = ExtResource("1_sn6fs")
+rarity = 3
+metadata/_custom_type_script = "uid://bywxvlht4yxl3"

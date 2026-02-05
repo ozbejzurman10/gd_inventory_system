@@ -3,6 +3,7 @@ using System;
 
 public partial class Main : Node2D
 {
+    /*
     // Item narejen v editorju
     [Export]
     public InventoryItem editor_item;
@@ -26,7 +27,6 @@ public partial class Main : Node2D
         UseInventoryItem(simpleitem);
         UseInventoryItem(potion);
         UseInventoryItem(editor_item);
-        */
 
         // Preden dodamo iteme v kodi (izpise samo iteme ki so bili dodani v editorju)
         GD.Print(" --- Inventory before adding items in script:");
@@ -58,4 +58,6 @@ public partial class Main : Node2D
     {
         item.UseItem();
     }
+*/
 }
+

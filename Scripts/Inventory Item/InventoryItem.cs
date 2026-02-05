@@ -15,6 +15,18 @@ public partial class InventoryItem : Resource
     [Export]
 	public int MaxStack { get; set; } = 99;
 
+    [Export]
+    public Rarity rarity { get; set; }
+    public enum Rarity
+    {
+        Common,
+        Uncommon,
+        Rare,
+        Epic,
+        Legendary,
+        UltraLegendary
+    }
+
     // Staticna metoda ki hrani koliko itemov je bilo ustvarjenih
     public static int TotalItemsCreated = 0;
 
@@ -32,7 +44,7 @@ public partial class InventoryItem : Resource
 
     public virtual void UseItem()
 	{
-		GD.Print($"You used the item {Name}");
+		GD.Print($"You used the item {Name}, Rairty: {rarity}");
 	}
 
     // Prikaz preobleganja operatorjev. Naredi novi item ki zdruzi imeni obeh itemov

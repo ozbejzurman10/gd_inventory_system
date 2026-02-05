@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ConsumableItem" load_steps=2 format=3 uid="uid://dp8qwx222gcrb"]
-
-[ext_resource type="Script" uid="uid://bfmot17avp73k" path="res://Scripts/Inventory Item/ConsumableItem.cs" id="1_wdjjf"]
-
-[resource]
-script = ExtResource("1_wdjjf")
-HealthIncrease = 100.0
-Name = "Test Consumable"
-metadata/_custom_type_script = "uid://bfmot17avp73k"

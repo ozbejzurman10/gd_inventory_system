@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://berwajl6f242f"]
+
+[ext_resource type="Script" uid="uid://bywxvlht4yxl3" path="res://Scripts/Inventory Item/InventoryItem.cs" id="1_18d53"]
+[ext_resource type="Texture2D" uid="uid://f1msp6xmddmb" path="res://Test Art/le_banidit.png" id="1_dklsk"]
+
+[resource]
+script = ExtResource("1_18d53")
+Name = "Le Bandit"
+Texture = ExtResource("1_dklsk")
+rarity = 3
+metadata/_custom_type_script = "uid://bywxvlht4yxl3"

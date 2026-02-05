@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dm6y8sar460hi"]
+
+[ext_resource type="Script" uid="uid://bywxvlht4yxl3" path="res://Scripts/Inventory Item/InventoryItem.cs" id="1_puc3d"]
+[ext_resource type="Texture2D" uid="uid://c41pc7sxtgd20" path="res://Test Art/Luck-Labubu-Keychain-Buy-Online.webp" id="1_tkpyk"]
+
+[resource]
+script = ExtResource("1_puc3d")
+Name = "Labubu"
+Texture = ExtResource("1_tkpyk")
+metadata/_custom_type_script = "uid://bywxvlht4yxl3"

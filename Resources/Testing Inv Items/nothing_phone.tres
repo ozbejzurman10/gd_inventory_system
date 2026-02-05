@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://ciywhude1lb8m"]
+
+[ext_resource type="Script" uid="uid://bywxvlht4yxl3" path="res://Scripts/Inventory Item/InventoryItem.cs" id="1_pflbl"]
+[ext_resource type="Texture2D" uid="uid://bpiha31kjbjrp" path="res://Test Art/nothingphone.webp" id="1_q771g"]
+
+[resource]
+script = ExtResource("1_pflbl")
+Name = "Nothing Phone 3"
+Texture = ExtResource("1_q771g")
+rarity = 3
+metadata/_custom_type_script = "uid://bywxvlht4yxl3"

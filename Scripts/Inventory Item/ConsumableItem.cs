@@ -7,7 +7,7 @@ public partial class ConsumableItem : InventoryItem
 	[Export]
 	public float HealthIncrease { get; set; }
 
-    private const float MaxHealthRestore = 500.0;
+    private const float MaxHealthRestore = 500;
 
     public override void UseItem()
 	{
@@ -16,6 +16,7 @@ public partial class ConsumableItem : InventoryItem
 			HealthIncrease = MaxHealthRestore;
         }
 
-        GD.Print($"You consumed the item {Name}, +{HealthIncrease} HP");
-	}
+        GD.Print($"You consumed the item {Name}, +{HealthIncrease} HP, Rairty: {rarity}");
+
+    }
 }
