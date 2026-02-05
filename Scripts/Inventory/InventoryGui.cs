@@ -34,7 +34,7 @@ public partial class InventoryGui : Control
 
     }
 
-    // Nastavilo stevilo SlotGUIjev glede na stevilo slotov v inventarju
+    // Nastavilo stevilo SlotGUI NODOV glede na stevilo slotov v inventarju
     private void ResizeSlots(int count)
     {
         // ODSTRANI ODVEČNE SLOTE
@@ -53,7 +53,7 @@ public partial class InventoryGui : Control
 
         // Napolni array
         guiSlots = new InventorySlotGUI[count];
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < slotsContainer.GetChildCount(); i++)
         {
             guiSlots[i] = slotsContainer.GetChild<InventorySlotGUI>(i);
         }

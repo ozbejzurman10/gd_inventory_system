@@ -4,6 +4,9 @@ using System;
 [GlobalClass]
 public partial class ConsumableItem : InventoryItem
 {
+	// Nova vrsta inv itema ki ima durgačno UseItem metodo.
+	// TODO: DODAJ SE VEC VRST
+
 	[Export]
 	public float HealthIncrease { get; set; }
 

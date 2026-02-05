@@ -10,38 +10,42 @@ public partial class InventorySlotGUI : Button
     private InventorySlot inventorySlot = new InventorySlot();
     private ShaderMaterial rainbowMat;
 
-
     public override void _Ready()
     {
+        // node refrences
         icon = GetNode<TextureRect>("Icon");
         background = GetNode<Panel>("Background");
 
+        // rainbow background shader effect
         var shader = GD.Load<Shader>("res://Shaders/rainbow_bg.gdshader");
         rainbowMat = new ShaderMaterial();
         rainbowMat.Shader = shader;
 
+        // Povezi signal za klik na slot
         Pressed += OnPressed;
-        //ClearSlot();
+
+        ClearSlot();
     }
 
-
+    // Dodaj item v ta slotGUI
     public void InsertItem(InventoryItem newItem, int newAmount)
     {
-
+        // Dodaj item v InventorySlot resource
         inventorySlot.item = newItem;
         inventorySlot.amount = newAmount;
-        /*
+        
         if (inventorySlot.item == null)
         {
             ClearSlot();
             return;
         }
-        */
 
+        // Nastavi texture in bg color glede na rarity itema
         icon.Texture = inventorySlot.item.Texture;
         SetRarityColor(inventorySlot.item.rarity);
     }
 
+    // Resetira slot, odstrani texture, item in resetira bg color
     public void ClearSlot()
     {
         inventorySlot.item = null;
@@ -50,16 +54,17 @@ public partial class InventorySlotGUI : Button
         SetRarityColor(InventoryItem.Rarity.Common);
     }
 
+    // Nastavi barvo ozadja glede na rarity itema
     private void SetRarityColor(InventoryItem.Rarity rarity)
     {
-
+        // ce je rarity ultralegendary, nastavi shader material za rainbow efekt
         if (rarity == InventoryItem.Rarity.UltraLegendary)
         {
             background.Material = rainbowMat;
-            background.RemoveThemeStyleboxOverride("panel");
             return;
         }
 
+        // resetiramo bg material in dodamo pravilno barvo glede na rarity
         background.Material = null;
 
         var style = new StyleBoxFlat
@@ -79,7 +84,7 @@ public partial class InventorySlotGUI : Button
     }
 
 
-
+    // Poklici UseItem metodo ko zaznamo klic onPressed signala
     private void OnPressed()
     {
         UseItem();
@@ -87,6 +92,8 @@ public partial class InventorySlotGUI : Button
 
     public void UseItem()
     {
+        //GD.Print($"clicked on a slot with {inventorySlot.amount} items");
+
         if (inventorySlot.item != null)
         {
             inventorySlot.item.UseItem();

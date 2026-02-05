@@ -4,11 +4,10 @@ using System;
 [GlobalClass]
 public partial class Inventory : Resource
 {
-    // vedno empty array kot default, da ne dobimo null reference exceptiona
-    [Export]
+    [Export] // Vedno empty array kot default, da ne dobimo null reference exceptiona
     public InventorySlot[] ItemSlots { get; set; } = Array.Empty<InventorySlot>();
 
-    // Doda item v inventory. Najde prvi prosti slot
+    // Doda item v inventory resource. Najde prvi prosti slot
     public void AddItem(InventoryItem item, int amount)
     {
         // Dodaj item v prvi prosti slot

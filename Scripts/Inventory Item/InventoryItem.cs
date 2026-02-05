@@ -7,7 +7,6 @@ public partial class InventoryItem : Resource
 	[Export]
 	public string Name { get; set; }
 
-	// Se ni v uporabi
 	[Export]
 	public Texture2D Texture { get; set; }
 
@@ -48,6 +47,7 @@ public partial class InventoryItem : Resource
 	}
 
     // Prikaz preobleganja operatorjev. Naredi novi item ki zdruzi imeni obeh itemov
+    // TODO: Uporabi v igri (sistem za zdruzevanje itemov?)
     public static InventoryItem operator +(InventoryItem a, InventoryItem b)
     {
         return new InventoryItem(a.Name + " & " + b.Name);
