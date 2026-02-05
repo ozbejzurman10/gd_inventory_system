@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 [GlobalClass]
-public partial class InventoryItem : Resource
+public abstract partial class InventoryItem : Resource, IUsable
 {
 	[Export]
 	public string Name { get; set; }
@@ -41,19 +41,23 @@ public partial class InventoryItem : Resource
         TotalItemsCreated++;
     }
 
-    public virtual void UseItem()
-	{
-		GD.Print($"You used the item {Name}, Rairty: {rarity}");
-	}
+    // Prazno. Vsak subclass implementira svojo verzijo
+    public abstract void Use();
+    public abstract string GetUseDescription();
+    //GD.Print($"You used the item {Name}, Rairty: {rarity}");
+
 
     // Prikaz preobleganja operatorjev. Naredi novi item ki zdruzi imeni obeh itemov
     // TODO: Uporabi v igri (sistem za zdruzevanje itemov?)
+    // PRESTAVI V COMBINABLE ITEM TU SE NE DA UPORABITI SAJ JE TA CLASS ZDAJ ABSTRACT
+    /*
     public static InventoryItem operator +(InventoryItem a, InventoryItem b)
     {
         return new InventoryItem(a.Name + " & " + b.Name);
     }
+    */
 
-
+    // Redko uporabljeno v godotu zaradi garbage collectiona
     ~InventoryItem()
     {
         GD.Print($"{Name} destroyed!");

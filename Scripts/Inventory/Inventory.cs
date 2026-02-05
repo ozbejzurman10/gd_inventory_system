@@ -7,6 +7,21 @@ public partial class Inventory : Resource
     [Export] // Vedno empty array kot default, da ne dobimo null reference exceptiona
     public InventorySlot[] ItemSlots { get; set; } = Array.Empty<InventorySlot>();
 
+    // INDEKSER Inventory[0] namesto Inventory.ItemSlots[0]
+    public InventorySlot this[int index]
+    {
+        get
+        {
+            if (index >= 0 && index < ItemSlots.Length) return ItemSlots[index];
+            else
+            {
+                GD.PrintErr("Invalid Inventory Index!");
+                return null;
+            }
+        }
+        // set ni potreben
+    }
+
     // Doda item v inventory resource. Najde prvi prosti slot
     public void AddItem(InventoryItem item, int amount)
     {

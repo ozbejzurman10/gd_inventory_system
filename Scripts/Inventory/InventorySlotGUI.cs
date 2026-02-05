@@ -96,7 +96,7 @@ public partial class InventorySlotGUI : Button
 
         if (inventorySlot.item != null)
         {
-            inventorySlot.item.UseItem();
+            inventorySlot.item.Use();
         }
         else
         {

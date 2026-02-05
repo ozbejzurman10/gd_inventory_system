@@ -14,6 +14,7 @@ public partial class InventoryGui : Control
     [Export]
     public PackedScene SlotScene; // Kaze na invslotgui scene
 
+
     
     public override void _Ready()
     {
@@ -65,19 +66,19 @@ public partial class InventoryGui : Control
         // Najprej pocisti vse slote nato dodaj nove iteme
         for (int i = 0; i < guiSlots.Length; i++)
         {
-            //guiSlots[i].ClearSlot();
+            guiSlots[i].ClearSlot();
         }
 
         // Dodaj iteme v slote
         for (int i = 0; i < inv.ItemSlots.Length && i < guiSlots.Length; i++)
         {
 
-            if (inv.ItemSlots[i] == null || inv.ItemSlots[i].item == null)
+            if (inv[i] == null || inv[i].item == null)
             { 
                 return; 
             }
 
-            InventorySlot invSlot = inv.ItemSlots[i];
+            InventorySlot invSlot = inv[i];
 
             guiSlots[i].InsertItem(invSlot.item, invSlot.amount);
             GD.Print($"Added {invSlot.amount} of {invSlot.item.Name} to slot {i}");

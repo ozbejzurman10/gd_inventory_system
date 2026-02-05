@@ -12,7 +12,7 @@ public partial class ConsumableItem : InventoryItem
 
     private const float MaxHealthRestore = 500;
 
-    public override void UseItem()
+    public override void Use()
 	{
 		if (HealthIncrease > MaxHealthRestore)
 		{
@@ -20,6 +20,10 @@ public partial class ConsumableItem : InventoryItem
         }
 
         GD.Print($"You consumed the item {Name}, +{HealthIncrease} HP, Rairty: {rarity}");
+    }
 
+    public override string GetUseDescription()
+    {
+        return $"Restores {HealthIncrease} HP";
     }
 }
