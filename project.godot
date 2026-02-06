@@ -15,6 +15,18 @@ run/main_scene="uid://dn7wqwdc77ybo"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="InventorySystemC#"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

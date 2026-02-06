@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MaterialItem" load_steps=3 format=3 uid="uid://c710l5vgu58ty"]
+
+[ext_resource type="Texture2D" uid="uid://dui77hs7ds26n" path="res://Art/Items/empty_potion.png" id="1_nfqgc"]
+[ext_resource type="Script" uid="uid://chlbdlot5k8eh" path="res://Scripts/Inventory Item/MaterialItem.cs" id="1_vu457"]
+
+[resource]
+script = ExtResource("1_vu457")
+Name = "Empty Potion"
+Texture = ExtResource("1_nfqgc")
+metadata/_custom_type_script = "uid://chlbdlot5k8eh"

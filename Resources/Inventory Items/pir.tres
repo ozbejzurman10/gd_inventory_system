@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ConsumableItem" load_steps=3 format=3 uid="uid://5hje3ehslqvj"]
+
+[ext_resource type="Script" uid="uid://bfmot17avp73k" path="res://Scripts/Inventory Item/ConsumableItem.cs" id="1_08ld8"]
+[ext_resource type="Texture2D" uid="uid://bjx3hux103gu" path="res://Art/Items/beer.png" id="1_mqyts"]
+
+[resource]
+script = ExtResource("1_08ld8")
+HealthIncrease = 100.0
+Name = "Beer"
+Texture = ExtResource("1_mqyts")
+rarity = 5
+metadata/_custom_type_script = "uid://bfmot17avp73k"
