@@ -10,15 +10,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.67, 1.67)
 script = ExtResource("1_mcfc2")
 SlotScene = ExtResource("1_5b8qi")
 
+[node name="TextureRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.16820496, 0.054681063, 6.016344e-09, 1)
+
 [node name="SlotContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 0
 offset_top = 1.0
-offset_right = 200.0
-offset_bottom = 201.0
+offset_right = 110.0
+offset_bottom = 181.0
 scale = Vector2(1.4, 1.4)
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
@@ -31,4 +38,22 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Inventory Slot3" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot4" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot5" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot6" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot7" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot8" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot9" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
 layout_mode = 2

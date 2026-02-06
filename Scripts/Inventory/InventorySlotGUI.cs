@@ -7,8 +7,11 @@ public partial class InventorySlotGUI : Button
 
     private TextureRect icon;
     private Panel background;
-    private InventorySlot inventorySlot = new InventorySlot();
+    public InventorySlot inventorySlot = new InventorySlot();
     private ShaderMaterial rainbowMat;
+
+    [Signal]
+    public delegate void SlotSelectedEventHandler(InventorySlotGUI slot);
 
     public override void _Ready()
     {
@@ -20,6 +23,7 @@ public partial class InventorySlotGUI : Button
         var shader = GD.Load<Shader>("res://Shaders/rainbow_bg.gdshader");
         rainbowMat = new ShaderMaterial();
         rainbowMat.Shader = shader;
+
 
         // Povezi signal za klik na slot
         Pressed += OnPressed;
@@ -94,6 +98,9 @@ public partial class InventorySlotGUI : Button
     // Poklici UseItem metodo ko zaznamo klic onPressed signala
     private void OnPressed()
     {
+        // Poslji signal da je bil ta slot izbran
+        EmitSignal(SignalName.SlotSelected, this);
+
         UseItem();
     }
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://toegxvgldhck"]
+
+[ext_resource type="Script" uid="uid://do2txgivbures" path="res://Scripts/SelectedItemView.cs" id="1_2c2j1"]
+[ext_resource type="PackedScene" uid="uid://coq6uf3rpeysb" path="res://Scenes/inventory_slot.tscn" id="2_dakyv"]
+
+[node name="Selected Item View" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2c2j1")
+
+[node name="Preview Slot" parent="." instance=ExtResource("2_dakyv")]
+layout_mode = 0
+scale = Vector2(2, 2)
