@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponItem" load_steps=2 format=3 uid="uid://b1nrsmxavya7r"]
+
+[ext_resource type="Script" uid="uid://bhjn5dptx4a6p" path="res://Scripts/Inventory Item/WeaponItem.cs" id="1_8bts6"]
+
+[resource]
+script = ExtResource("1_8bts6")
+Damage = 30
+Name = "Potato"
+rarity = 5
+metadata/_custom_type_script = "uid://bhjn5dptx4a6p"

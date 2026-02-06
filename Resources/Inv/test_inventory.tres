@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=15 format=3 uid="uid://dcbjdh80so6gd"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=16 format=3 uid="uid://dcbjdh80so6gd"]
 
 [ext_resource type="Script" uid="uid://bpa5tnjdo0k45" path="res://Scripts/Inventory/InventorySlot.cs" id="2_vjxxk"]
 [ext_resource type="Resource" uid="uid://c710l5vgu58ty" path="res://Resources/Inventory Items/empty_potion.tres" id="3_vjxxk"]
+[ext_resource type="Resource" uid="uid://b1nrsmxavya7r" path="res://Resources/Inventory Items/potato.tres" id="4_8t286"]
 [ext_resource type="Script" uid="uid://42s8ux2ltcst" path="res://Scripts/Inventory/Inventory.cs" id="4_d8hgc"]
 [ext_resource type="Resource" uid="uid://5hje3ehslqvj" path="res://Resources/Inventory Items/pir.tres" id="4_iaxf3"]
 
@@ -25,6 +26,7 @@ metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
 
 [sub_resource type="Resource" id="Resource_3qqrk"]
 script = ExtResource("2_vjxxk")
+item = ExtResource("4_8t286")
 metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
 
 [sub_resource type="Resource" id="Resource_vjxxk"]
