@@ -22,6 +22,12 @@ public partial class SelectedItemView : Control
 
     public void UseSelectedItem()
     {
+        if (selectedItem == null)
+        {
+            GD.Print("No item selected to use!");
+            return;
+        }
+
         selectedItem.Use();
     }
 }

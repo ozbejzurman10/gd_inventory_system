@@ -100,21 +100,5 @@ public partial class InventorySlotGUI : Button
     {
         // Poslji signal da je bil ta slot izbran
         EmitSignal(SignalName.SlotSelected, this);
-
-        UseItem();
-    }
-
-    public void UseItem()
-    {
-        //GD.Print($"clicked on a slot with {inventorySlot.amount} items");
-
-        if (inventorySlot.item != null)
-        {
-            inventorySlot.item.Use();
-        }
-        else
-        {
-            GD.Print("No item in this slot to use!");
-        }
     }
 }
