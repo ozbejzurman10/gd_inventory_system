@@ -6,6 +6,8 @@ public partial class InventoryGui : Control
 {
     [Export]
     public Inventory inv { get; set; }
+
+    [Export]
     public SelectedItemView selectedItemView { get; set; }
 
     private GridContainer slotsContainer;
@@ -14,8 +16,6 @@ public partial class InventoryGui : Control
 
     [Export]
     public PackedScene SlotScene; // Kaze na invslotgui scene
-
-
     
     public override void _Ready()
     {
@@ -51,9 +51,6 @@ public partial class InventoryGui : Control
             // Ustvari nov slot in ga dodaj v GridContainer
             var slot = SlotScene.Instantiate<InventorySlotGUI>();
             slotsContainer.AddChild(slot);
-
-            // POVEŽI SIGNAL Ko slot odda SlotSelected, poklici metodo
-            slot.SlotSelected += SlotSelected;
         }
 
         // Napolni array
@@ -61,6 +58,8 @@ public partial class InventoryGui : Control
         for (int i = 0; i < slotsContainer.GetChildCount(); i++)
         {
             guiSlots[i] = slotsContainer.GetChild<InventorySlotGUI>(i);
+            // POVEŽI SIGNAL Ko slot odda SlotSelected, poklici metodo
+            guiSlots[i].SlotSelected += SlotSelected;
         }
     }
 

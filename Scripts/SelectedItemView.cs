@@ -12,6 +12,5 @@ public partial class SelectedItemView : Control
     public void UpdateDisplay(InventoryItem item, int amount)
     {
         previewGuiSlot.InsertItem(item, amount);
-        //Visible = true;
     }
 }
