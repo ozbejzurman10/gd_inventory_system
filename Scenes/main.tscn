@@ -13,7 +13,7 @@ inv = ExtResource("3_jjvhh")
 selectedItemView = NodePath("../Selected Item View")
 
 [node name="Selected Item View" parent="." instance=ExtResource("4_kry3j")]
-offset_left = 225.0
-offset_top = 68.0
-offset_right = 225.0
-offset_bottom = 68.0
+offset_left = 231.0
+offset_top = 42.0
+offset_right = 231.0
+offset_bottom = 42.0

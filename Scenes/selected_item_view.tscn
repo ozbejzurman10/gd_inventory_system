@@ -14,4 +14,16 @@ script = ExtResource("1_2c2j1")
 
 [node name="Preview Slot" parent="." instance=ExtResource("2_dakyv")]
 layout_mode = 0
+offset_right = 22.0
+offset_bottom = 22.0
 scale = Vector2(2, 2)
+
+[node name="Use Item Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 60.0
+offset_right = 62.0
+offset_bottom = 91.0
+text = "Use Item"
+
+[connection signal="pressed" from="Use Item Button" to="." method="_on_use_item_button_pressed"]
