@@ -72,10 +72,10 @@ public partial class InventoryGui : Control
         // Dodaj iteme v slote
         for (int i = 0; i < inv.ItemSlots.Length && i < guiSlots.Length; i++)
         {
-
+            // Ce je slot prazen preskoci
             if (inv[i] == null || inv[i].item == null)
             { 
-                return; 
+                continue;
             }
 
             InventorySlot invSlot = inv[i];
@@ -84,5 +84,4 @@ public partial class InventoryGui : Control
             GD.Print($"Added {invSlot.amount} of {invSlot.item.Name} to slot {i}");
         }
     }
-
 }
