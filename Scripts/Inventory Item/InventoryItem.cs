@@ -18,6 +18,7 @@ public abstract partial class InventoryItem : Resource, IUsable
     public Rarity rarity { get; set; }
     public enum Rarity
     {
+        None,
         Common,
         Uncommon,
         Rare,

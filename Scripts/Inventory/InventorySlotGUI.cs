@@ -51,12 +51,19 @@ public partial class InventorySlotGUI : Button
         inventorySlot.item = null;
         icon.Texture = null;
 
-        SetRarityColor(InventoryItem.Rarity.Common);
+        SetRarityColor(InventoryItem.Rarity.None);
     }
 
     // Nastavi barvo ozadja glede na rarity itema
     private void SetRarityColor(InventoryItem.Rarity rarity)
     {
+        if (rarity == InventoryItem.Rarity.None)
+        {
+            background.Material = null;
+            background.AddThemeStyleboxOverride("panel", new StyleBoxFlat { BgColor = Colors.Transparent });
+            return;
+        }
+
         // ce je rarity ultralegendary, nastavi shader material za rainbow efekt
         if (rarity == InventoryItem.Rarity.UltraLegendary)
         {

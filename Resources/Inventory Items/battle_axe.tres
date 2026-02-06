@@ -8,5 +8,5 @@ script = ExtResource("1_4615n")
 Damage = 20
 Name = "Battle Axe"
 Texture = ExtResource("1_oxaek")
-rarity = 2
+rarity = 3
 metadata/_custom_type_script = "uid://bhjn5dptx4a6p"

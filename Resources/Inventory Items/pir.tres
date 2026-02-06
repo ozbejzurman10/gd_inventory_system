@@ -8,5 +8,5 @@ script = ExtResource("1_08ld8")
 HealthIncrease = 100.0
 Name = "Beer"
 Texture = ExtResource("1_mqyts")
-rarity = 5
+rarity = 6
 metadata/_custom_type_script = "uid://bfmot17avp73k"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=10 format=3 uid="uid://dcbjdh80so6gd"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=15 format=3 uid="uid://dcbjdh80so6gd"]
 
 [ext_resource type="Script" uid="uid://bpa5tnjdo0k45" path="res://Scripts/Inventory/InventorySlot.cs" id="2_vjxxk"]
 [ext_resource type="Resource" uid="uid://c710l5vgu58ty" path="res://Resources/Inventory Items/empty_potion.tres" id="3_vjxxk"]
@@ -27,7 +27,27 @@ metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
 script = ExtResource("2_vjxxk")
 metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
 
+[sub_resource type="Resource" id="Resource_vjxxk"]
+script = ExtResource("2_vjxxk")
+metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
+
+[sub_resource type="Resource" id="Resource_3ytqb"]
+script = ExtResource("2_vjxxk")
+metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
+
+[sub_resource type="Resource" id="Resource_yq3gr"]
+script = ExtResource("2_vjxxk")
+metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
+
+[sub_resource type="Resource" id="Resource_mugil"]
+script = ExtResource("2_vjxxk")
+metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
+
+[sub_resource type="Resource" id="Resource_pkbl2"]
+script = ExtResource("2_vjxxk")
+metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
+
 [resource]
 script = ExtResource("4_d8hgc")
-ItemSlots = [SubResource("Resource_iaxf3"), SubResource("Resource_8t286"), SubResource("Resource_d8hgc"), SubResource("Resource_7f8qx"), SubResource("Resource_3qqrk")]
+ItemSlots = [SubResource("Resource_iaxf3"), SubResource("Resource_8t286"), SubResource("Resource_d8hgc"), SubResource("Resource_7f8qx"), SubResource("Resource_3qqrk"), SubResource("Resource_vjxxk"), SubResource("Resource_3ytqb"), SubResource("Resource_yq3gr"), SubResource("Resource_mugil"), SubResource("Resource_pkbl2")]
 metadata/_custom_type_script = "uid://42s8ux2ltcst"
