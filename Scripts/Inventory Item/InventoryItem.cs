@@ -48,16 +48,6 @@ public abstract partial class InventoryItem : Resource, IUsable
     //GD.Print($"You used the item {Name}, Rairty: {rarity}");
 
 
-    // Prikaz preobleganja operatorjev. Naredi novi item ki zdruzi imeni obeh itemov
-    // TODO: Uporabi v igri (sistem za zdruzevanje itemov?)
-    // PRESTAVI V COMBINABLE ITEM TU SE NE DA UPORABITI SAJ JE TA CLASS ZDAJ ABSTRACT
-    /*
-    public static InventoryItem operator +(InventoryItem a, InventoryItem b)
-    {
-        return new InventoryItem(a.Name + " & " + b.Name);
-    }
-    */
-
     // Redko uporabljeno v godotu zaradi garbage collectiona
     ~InventoryItem()
     {

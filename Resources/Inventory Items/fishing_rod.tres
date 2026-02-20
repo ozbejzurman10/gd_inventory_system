@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponItem" load_steps=3 format=3 uid="uid://qg3imo6hsq"]
+
+[ext_resource type="Texture2D" uid="uid://cwde16ge2mvin" path="res://Art/Items/fishing_rod.png" id="1_1pwh5"]
+[ext_resource type="Script" uid="uid://bhjn5dptx4a6p" path="res://Scripts/Inventory Item/WeaponItem.cs" id="1_30beo"]
+
+[resource]
+script = ExtResource("1_30beo")
+Damage = 2
+Name = "Fishing Rod"
+Texture = ExtResource("1_1pwh5")
+rarity = 3
+metadata/_custom_type_script = "uid://bhjn5dptx4a6p"

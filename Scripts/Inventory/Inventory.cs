@@ -19,7 +19,6 @@ public partial class Inventory : Resource
                 return null;
             }
         }
-        // set ni potreben
     }
 
     // Doda item v inventory resource. Najde prvi prosti slot
