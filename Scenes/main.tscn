@@ -1,19 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn7wqwdc77ybo"]
+[gd_scene load_steps=7 format=3 uid="uid://dn7wqwdc77ybo"]
 
 [ext_resource type="Script" uid="uid://dm8x322qk237a" path="res://Scripts/Main.cs" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://ba5mcrhne12ba" path="res://Scenes/selected_item_container.tscn" id="2_kry3j"]
 [ext_resource type="Resource" uid="uid://dcbjdh80so6gd" path="res://Resources/Inv/test_inventory.tres" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://y185gasa2cn7" path="res://Scenes/inventory_gui.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://toegxvgldhck" path="res://Scenes/selected_item_view.tscn" id="4_kry3j"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_jjvhh"]
+font_size = 8
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jjgbg")
 
-[node name="InventoryGUI" parent="." node_paths=PackedStringArray("selectedItemView") instance=ExtResource("4_jjvhh")]
+[node name="InventoryGUI" parent="." node_paths=PackedStringArray("selectedItemView", "selectedItemContainer") instance=ExtResource("4_jjvhh")]
 inv = ExtResource("3_jjvhh")
 selectedItemView = NodePath("../Selected Item View")
+selectedItemContainer = NodePath("../Selected Item Container")
 
 [node name="Selected Item View" parent="." instance=ExtResource("4_kry3j")]
 offset_left = 231.0
 offset_top = 42.0
 offset_right = 231.0
 offset_bottom = 42.0
+
+[node name="Selected Item Container" parent="." instance=ExtResource("2_kry3j")]
+
+[node name="RarityInfo" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 93.0
+offset_right = 59.0
+offset_bottom = 180.0
+text = "Common
+Uncommon
+Rare
+Epic
+Legendary
+Ultralegendary"
+label_settings = SubResource("LabelSettings_jjvhh")

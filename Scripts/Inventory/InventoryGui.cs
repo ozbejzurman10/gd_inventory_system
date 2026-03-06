@@ -10,6 +10,10 @@ public partial class InventoryGui : Control
     [Export]
     public SelectedItemView selectedItemView { get; set; }
 
+    [Export]
+    public SelectedItemContainer selectedItemContainer { get; set; }
+
+
     private GridContainer slotsContainer;
     private InventorySlotGUI[] guiSlots;
     private int slotCount;
@@ -32,6 +36,7 @@ public partial class InventoryGui : Control
         slotCount = inv.ItemSlots.Length;
 
         ResizeSlots(slotCount);
+        SetSlotIndexes();
         FillItems();
 
     }
@@ -63,10 +68,83 @@ public partial class InventoryGui : Control
         }
     }
 
+    private void SetSlotIndexes()
+    {
+        for (int i = 0; i < guiSlots.Length; i++)
+        {
+            guiSlots[i].inventorySlot.Index = i;
+            //GD.Print($"Set slot {i} index to {guiSlots[i].inventorySlot.Index}");
+        }
+    }
+
     private void SlotSelected(InventorySlotGUI slot)
     {
         // Poslji informacije o izbranem slotu v SelectedItemView
         selectedItemView.UpdateDisplay(slot.inventorySlot.item, slot.inventorySlot.amount);
+        
+        
+        if (selectedItemContainer.selectedItem == null) {
+            SelectItem(slot.inventorySlot.item);
+            TakeFromSlot(slot.inventorySlot.Index);
+        }
+
+        else if (selectedItemContainer.selectedItem != null && slot.inventorySlot.item == null)
+        {
+            InsertItemToSlot(slot.inventorySlot.Index, selectedItemContainer.selectedItem);
+            SelectItem(null);
+        }
+
+        else if (selectedItemContainer.selectedItem != null && slot.inventorySlot.item != null)
+        {
+            SwapSelectedItem(slot);
+        }
+    }
+
+    private void TakeFromSlot(int index)
+    {
+        if (index >= 0 && index < guiSlots.Length)
+        {
+            guiSlots[index].ClearSlot();
+            inv.ClearItemFromSlot(index);
+        }
+    }
+
+    private void InsertItemToSlot(int index, InventoryItem item)
+    {
+        if (index >= 0 && index < guiSlots.Length)
+        {
+            inv.AddItemToSlot(item, 1, index);
+            FillItems();
+        }
+    }
+
+    private void SwapSelectedItem(InventorySlotGUI slot)
+    {
+        InventoryItem tempItem = slot.inventorySlot.item;
+        TakeFromSlot(slot.inventorySlot.Index);
+        InsertItemToSlot(slot.inventorySlot.Index, selectedItemContainer.selectedItem);
+        
+        if (tempItem != null)
+        {
+            SelectItem(tempItem);
+        }
+        else
+        {
+            SelectItem(null);
+        }
+    }
+
+    private void SelectItem(InventoryItem item)
+    {
+        if (item != null)
+        {
+            selectedItemContainer.UpdateSelectedItem(item);
+        }
+
+        if (item == null)
+        {
+            selectedItemContainer.ClearSelectedItem();
+        }
     }
 
 

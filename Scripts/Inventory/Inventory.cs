@@ -28,7 +28,7 @@ public partial class Inventory : Resource
         for (int i = 0; i < ItemSlots.Length; i++)
         {
             // Ce je slot prazen dodaj item
-            if (ItemSlots[i] == null)
+            if (ItemSlots[i].item == null)
             {
                 ItemSlots[i].item = item;
                 ItemSlots[i].amount = amount;
@@ -38,6 +38,37 @@ public partial class Inventory : Resource
             }
         }
         GD.PrintErr("Inventory FULL! No free slot available to add the item!");
+    }
+
+    public void AddItemToSlot(InventoryItem item, int amount, int index)
+    {
+        if (index < 0 || index >= ItemSlots.Length)
+        {
+            GD.PrintErr("Invalid Inventory Index!");
+            return;
+        }
+        if (ItemSlots[index].item == null)
+        {
+            ItemSlots[index].item = item;
+            ItemSlots[index].amount = amount;
+            GD.Print($"Added {amount} of item {item.Name} to slot {index}");
+        }
+        else
+        {
+           GD.PrintErr($"Slot {index} is already occupied! Cannot add item {item.Name}.");
+        }
+    }
+
+    public void ClearItemFromSlot(int index)
+    {
+        if (index < 0 || index >= ItemSlots.Length)
+        {
+            GD.PrintErr("Invalid Inventory Index!");
+            return;
+        }
+        ItemSlots[index].item = null;
+        ItemSlots[index].amount = 0;
+        GD.Print($"Cleared item from slot {index}");
     }
 
     // BRISI

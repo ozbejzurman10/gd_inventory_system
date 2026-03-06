@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba5mcrhne12ba"]
+
+[ext_resource type="Script" uid="uid://byf53hg4hppti" path="res://Scripts/SelectedItemContainer.cs" id="1_4imro"]
+
+[node name="Selected Item Container" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 48.0
+offset_top = 74.0
+offset_right = 48.0
+offset_bottom = 74.0
+script = ExtResource("1_4imro")
+
+[node name="Icon" type="Sprite2D" parent="."]
