@@ -180,4 +180,20 @@ public partial class InventoryGui : Control
             GD.Print($"Added {invSlot.amount} of {invSlot.item.Name} to slot {i}");
         }
     }
+
+    public InventoryItem[] GetInventoryItems() {
+        InventoryItem[] items = new InventoryItem[guiSlots.Length];
+        for (int i = 0; i < guiSlots.Length; i++)
+        {
+            items[i] = guiSlots[i].inventorySlot.item;
+            GD.Print($"Slot {i} contains: {(items[i] != null ? items[i].Name : "Empty")}");
+        }
+        return items;
+    }
+
+    public void AddItemToInventory(InventoryItem item, int amount)
+    {
+        inv.AddItem(item, amount);
+        FillItems();
+    }
 }

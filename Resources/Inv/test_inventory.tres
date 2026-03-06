@@ -23,6 +23,7 @@ metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
 
 [sub_resource type="Resource" id="Resource_7f8qx"]
 script = ExtResource("2_vjxxk")
+item = ExtResource("3_vjxxk")
 metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
 
 [sub_resource type="Resource" id="Resource_3qqrk"]

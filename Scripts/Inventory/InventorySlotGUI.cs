@@ -13,9 +13,6 @@ public partial class InventorySlotGUI : Button
     [Signal]
     public delegate void SlotSelectedEventHandler(InventorySlotGUI slot);
 
-    [Export]
-    public Node holdingItemContainer { get; set; }
-
     public override void _Ready()
     {
         // node refrences
