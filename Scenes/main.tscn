@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn7wqwdc77ybo"]
+[gd_scene load_steps=8 format=3 uid="uid://dn7wqwdc77ybo"]
 
 [ext_resource type="Script" uid="uid://dm8x322qk237a" path="res://Scripts/Main.cs" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://ba5mcrhne12ba" path="res://Scenes/selected_item_container.tscn" id="2_kry3j"]
 [ext_resource type="Resource" uid="uid://dcbjdh80so6gd" path="res://Resources/Inv/test_inventory.tres" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://y185gasa2cn7" path="res://Scenes/inventory_gui.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://toegxvgldhck" path="res://Scenes/selected_item_view.tscn" id="4_kry3j"]
+[ext_resource type="Resource" uid="uid://cliiss4by86mn" path="res://Resources/Inv/test_inv_2.tres" id="6_21xkr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jjvhh"]
 font_size = 8
@@ -14,6 +15,15 @@ script = ExtResource("1_jjgbg")
 
 [node name="InventoryGUI" parent="." node_paths=PackedStringArray("selectedItemView", "selectedItemContainer") instance=ExtResource("4_jjvhh")]
 inv = ExtResource("3_jjvhh")
+selectedItemView = NodePath("../Selected Item View")
+selectedItemContainer = NodePath("../Selected Item Container")
+
+[node name="InventoryGUI2" parent="." node_paths=PackedStringArray("selectedItemView", "selectedItemContainer") instance=ExtResource("4_jjvhh")]
+offset_left = 53.0
+offset_top = 102.0
+offset_right = 53.0
+offset_bottom = 102.0
+inv = ExtResource("6_21xkr")
 selectedItemView = NodePath("../Selected Item View")
 selectedItemContainer = NodePath("../Selected Item Container")
 

@@ -44,23 +44,31 @@ public partial class InventoryGui : Control
     // Nastavilo stevilo SlotGUI NODOV glede na stevilo slotov v inventarju
     private void ResizeSlots(int count)
     {
+        int currentChildCount = slotsContainer.GetChildCount();
+
         // ODSTRANI ODVEČNE SLOTE
-        while (slotsContainer.GetChildCount() > count)
+        while (currentChildCount > count)
         {
-            slotsContainer.GetChild(slotsContainer.GetChildCount() - 1).QueueFree();
+            var child = slotsContainer.GetChild(currentChildCount - 1);
+
+            slotsContainer.RemoveChild(child);
+
+            child.QueueFree();
+            currentChildCount--;
         }
 
         // DODAJ MANJKAJOČE SLOTE
-        while (slotsContainer.GetChildCount() < count)
+        while (currentChildCount < count)
         {
             // Ustvari nov slot in ga dodaj v GridContainer
             var slot = SlotScene.Instantiate<InventorySlotGUI>();
             slotsContainer.AddChild(slot);
+            currentChildCount++;
         }
 
         // Napolni array
         guiSlots = new InventorySlotGUI[count];
-        for (int i = 0; i < slotsContainer.GetChildCount(); i++)
+        for (int i = 0; i < count; i++)
         {
             guiSlots[i] = slotsContainer.GetChild<InventorySlotGUI>(i);
             // POVEŽI SIGNAL Ko slot odda SlotSelected, poklici metodo
@@ -80,7 +88,7 @@ public partial class InventoryGui : Control
     private void SlotSelected(InventorySlotGUI slot)
     {
         // Poslji informacije o izbranem slotu v SelectedItemView
-        selectedItemView.UpdateDisplay(slot.inventorySlot.item, slot.inventorySlot.amount);
+        //selectedItemView.UpdateDisplay(slot.inventorySlot.item, slot.inventorySlot.amount);
         
         
         if (selectedItemContainer.selectedItem == null) {
