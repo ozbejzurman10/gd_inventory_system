@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CombineRecipe" load_steps=5 format=3 uid="uid://rpenmcp44bj0"]
+
+[ext_resource type="Resource" uid="uid://5hje3ehslqvj" path="res://Resources/Inventory Items/pir.tres" id="1_04nqe"]
+[ext_resource type="Script" uid="uid://dakq17brsm23p" path="res://Scripts/CombineRecipe.cs" id="1_w4e0l"]
+[ext_resource type="Resource" uid="uid://bcxll1cjl52e1" path="res://Resources/Inventory Items/battle_axe.tres" id="2_byeem"]
+[ext_resource type="Resource" uid="uid://qg3imo6hsq" path="res://Resources/Inventory Items/fishing_rod.tres" id="3_cnvew"]
+
+[resource]
+script = ExtResource("1_w4e0l")
+Ingredients = Array[Object]([ExtResource("1_04nqe"), ExtResource("2_byeem"), ExtResource("2_byeem"), null])
+Result = ExtResource("3_cnvew")
+metadata/_custom_type_script = "uid://dakq17brsm23p"

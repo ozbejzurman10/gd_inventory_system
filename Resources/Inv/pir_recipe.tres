@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CombineRecipe" load_steps=3 format=3 uid="uid://b01og77xfug80"]
+
+[ext_resource type="Resource" uid="uid://5hje3ehslqvj" path="res://Resources/Inventory Items/pir.tres" id="1_llwoh"]
+[ext_resource type="Script" uid="uid://dakq17brsm23p" path="res://Scripts/CombineRecipe.cs" id="1_rwmah"]
+
+[resource]
+script = ExtResource("1_rwmah")
+Ingredients = Array[Object]([null, null, null, null])
+Result = ExtResource("1_llwoh")
+metadata/_custom_type_script = "uid://dakq17brsm23p"

@@ -12,6 +12,9 @@ public partial class CombineButton : Button
     [Export]
     public InventoryItem drink { get; set; }
 
+    [Export]
+    public CombineRecipe[] Recipes { get; set; }
+
     public override void _Ready()
     {
         if (inventoryGui == null)
@@ -22,27 +25,57 @@ public partial class CombineButton : Button
         this.Pressed += OnCombinePressed;
     }
 
-    private void OnCombinePressed() {
+    private void OnCombinePressed()
+    {
         InventoryItem[] inventoryItems = inventoryGui.GetInventoryItems();
 
-        // simple combine check 
-        if (inventoryItems.Length >= 2) {
-            InventoryItem item1 = inventoryItems[0];
-            InventoryItem item2 = inventoryItems[1];
+        if (inventoryItems.Length < 2)
+        {
+            GD.Print("Not enough items to combine.");
+            return;
+        }
 
-            if ((item1.Name == "Empty Potion" && item2.Name == "Empty Potion")) {
-                outPutInvGui.AddItemToInventory(drink, 1);
+        foreach (CombineRecipe recipe in Recipes)
+        {
+            if (RecipeMatches(recipe, inventoryItems))
+            {
+                outPutInvGui.AddItemToInventory(recipe.Result, 1);
 
-                foreach (var slot in inventoryGui.guiSlots) {
+                foreach (var slot in inventoryGui.guiSlots)
+                {
                     inventoryGui.TakeFromSlot(slot.inventorySlot.Index);
                 }
-            } 
-            else {
-                GD.Print("These items cannot be combined.");
+
+                GD.Print("Recipe combined!");
+                return;
             }
-        } 
-        else {
-            GD.Print("Not enough items to combine.");
         }
+
+        GD.Print("These items cannot be combined.");
+    }
+
+    private bool RecipeMatches(CombineRecipe recipe, InventoryItem[] items)
+    {
+        if (items.Length != recipe.Ingredients.Length)
+            return false;
+
+        foreach (InventoryItem ingredient in recipe.Ingredients)
+        {
+            bool found = false;
+
+            foreach (InventoryItem item in items)
+            {
+                if (item == ingredient)
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+                return false;
+        }
+
+        return true;
     }
 }
