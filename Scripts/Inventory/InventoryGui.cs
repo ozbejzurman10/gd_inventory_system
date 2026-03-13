@@ -15,7 +15,7 @@ public partial class InventoryGui : Control
 
 
     private GridContainer slotsContainer;
-    private InventorySlotGUI[] guiSlots;
+    public InventorySlotGUI[] guiSlots;
     private int slotCount;
 
     [Export]
@@ -108,7 +108,7 @@ public partial class InventoryGui : Control
         }
     }
 
-    private void TakeFromSlot(int index)
+    public void TakeFromSlot(int index)
     {
         if (index >= 0 && index < guiSlots.Length)
         {

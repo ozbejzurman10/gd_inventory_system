@@ -10,7 +10,7 @@ public partial class CombineButton : Button
     public InventoryGui outPutInvGui { get; set; }
 
     [Export]
-    public InventoryItem battle_axe { get; set; }
+    public InventoryItem drink { get; set; }
 
     public override void _Ready()
     {
@@ -31,7 +31,11 @@ public partial class CombineButton : Button
             InventoryItem item2 = inventoryItems[1];
 
             if ((item1.Name == "Empty Potion" && item2.Name == "Empty Potion")) {
-                outPutInvGui.AddItemToInventory(battle_axe, 1);
+                outPutInvGui.AddItemToInventory(drink, 1);
+
+                foreach (var slot in inventoryGui.guiSlots) {
+                    inventoryGui.TakeFromSlot(slot.inventorySlot.Index);
+                }
             } 
             else {
                 GD.Print("These items cannot be combined.");
