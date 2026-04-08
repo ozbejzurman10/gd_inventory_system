@@ -57,6 +57,7 @@ public partial class ActiveItemView : Control
 
     public void UseSelectedItem()
     {
+
         if (activeItem == null)
         {
             GD.Print("No item selected to use!");

@@ -16,11 +16,10 @@ script = ExtResource("5_s57rl")
 ItemSlots = [SubResource("Resource_yfvwo")]
 metadata/_custom_type_script = "uid://42s8ux2ltcst"
 
-[node name="Active Item View" type="Control" unique_id=1575683933 node_paths=PackedStringArray("activeItemSlot")]
+[node name="Active Item View" type="Control" unique_id=1575683933]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_2c2j1")
-activeItemSlot = NodePath("ActiveItemGUI/SlotContainer/Inventory Slot")
 
 [node name="Use Item Button" type="Button" parent="." unique_id=1677255398]
 layout_mode = 0
@@ -36,7 +35,6 @@ offset_left = 33.0
 offset_right = 183.0
 offset_bottom = 23.0
 pivot_offset = Vector2(73, 12)
-text = "Item Name"
 label_settings = ExtResource("2_5sdln")
 
 [node name="Item Desc Label" type="Label" parent="." unique_id=1285523715]
@@ -45,8 +43,6 @@ offset_left = 34.0
 offset_top = 19.0
 offset_right = 111.0
 offset_bottom = 68.0
-text = "Item Desc
-Line 2"
 label_settings = ExtResource("2_5sdln")
 
 [node name="ActiveItemGUI" type="Control" parent="." unique_id=462866715]

@@ -6,7 +6,7 @@ public partial class MaterialItem : InventoryItem
 {
     public override void Use()
     {
-        GD.Print($"You used the material item {Name}, Rairty: {rarity}");
+        GD.Print($"This item has to use!");
     }
 
     public override string GetUseDescription()

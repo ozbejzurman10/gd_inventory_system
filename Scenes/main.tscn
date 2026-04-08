@@ -63,11 +63,12 @@ Recipes = Array[Object]([ExtResource("8_hptm8"), ExtResource("9_d1ilt"), ExtReso
 [node name="Output InventoryGUI" parent="Combine Items GUI" index="2" unique_id=1422392315 node_paths=PackedStringArray("selectedItemContainer")]
 selectedItemContainer = NodePath("../../Selected Item Container")
 
-[node name="Active Item View" parent="." unique_id=1396155313 node_paths=PackedStringArray("activeItemInvGui") instance=ExtResource("4_kry3j")]
+[node name="Active Item View" parent="." unique_id=1396155313 node_paths=PackedStringArray("activeItemSlot", "activeItemInvGui") instance=ExtResource("4_kry3j")]
 offset_left = 158.0
 offset_top = 5.0
 offset_right = 158.0
 offset_bottom = 5.0
+activeItemSlot = NodePath("ActiveItemGUI/SlotContainer/Inventory Slot")
 activeItemInvGui = NodePath("ActiveItemGUI")
 
 [node name="ActiveItemGUI" parent="Active Item View" index="3" unique_id=462866715 node_paths=PackedStringArray("selectedItemContainer")]
