@@ -3,30 +3,53 @@ using System;
 
 public partial class ActiveItemView : Control
 {
+    [Export]
     private InventorySlotGUI activeItemSlot;
+
     private Button useItemButton;
     private InventoryItem activeItem;
     private Label itemNameLabel;
+    private Label itemDescLabel;
     public override void _Ready()
     {
-        activeItemSlot = GetNode<InventorySlotGUI>("Active Slot");
         useItemButton = GetNode<Button>("Use Item Button");
         itemNameLabel = GetNode<Label>("Item Name Label");
+        itemDescLabel = GetNode<Label>("Item Desc Label");
 
         useItemButton.Pressed += UseSelectedItem;
+
+        activeItemSlot.ItemInsertedIntoSlot += ItemInserted;
+        activeItemSlot.ItemRemovedFromSlot += ClearActiveItem;
+
     }
 
-    public void UpdateDisplay(InventoryItem item, int amount)
+    public void ItemInserted(InventorySlotGUI slot)
     {
-        activeItemSlot.InsertItem(item, amount);
-        activeItem = item;
+        GD.Print("Updating active item display...");
 
-        if (item != null)
+        //activeItemSlot.InsertItem(slot.inventorySlot.item, slot.inventorySlot.amount);
+        activeItem = slot.inventorySlot.item;
+
+        if (slot.inventorySlot.item != null)
         {
-            itemNameLabel.Text = item.Name;
+            itemNameLabel.Text = slot.inventorySlot.item.Name;
+
+            itemDescLabel.Text = $"Description:\n{slot.inventorySlot.item.Description}\n" +
+                                 $"Rarity:\n{slot.inventorySlot.item.rarity}\n";
         }
 
-        else itemNameLabel.Text = "No Item";
+        else 
+        {
+            itemNameLabel.Text = "";
+            itemDescLabel.Text = "";
+        }
+    }
+
+    public void ClearActiveItem(InventorySlotGUI slot)
+    {
+        activeItem = null;
+        itemNameLabel.Text = "";
+        itemDescLabel.Text = "";
     }
 
     public void UseSelectedItem()

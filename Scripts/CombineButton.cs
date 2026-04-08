@@ -4,20 +4,17 @@ using System;
 public partial class CombineButton : Button
 {
     [Export]
-    public InventoryGui inventoryGui { get; set; }
+    public InventoryGui combineSlotsInventoryGui { get; set; }
 
     [Export]
-    public InventoryGui outPutInvGui { get; set; }
-
-    [Export]
-    public InventoryItem drink { get; set; }
+    public InventoryGui outputInvGui { get; set; }
 
     [Export]
     public CombineRecipe[] Recipes { get; set; }
 
     public override void _Ready()
     {
-        if (inventoryGui == null)
+        if (combineSlotsInventoryGui == null)
         {
             GD.PrintErr("InventoryGui is not assigned to CombineButton!");
             return;
@@ -27,11 +24,13 @@ public partial class CombineButton : Button
 
     private void OnCombinePressed()
     {
-        InventoryItem[] inventoryItems = inventoryGui.GetInventoryItems();
+        if (outputInvGui.guiSlots[0].inventorySlot.item != null) return;
+
+        InventoryItem[] inventoryItems = combineSlotsInventoryGui.GetInventoryItems();
 
         if (inventoryItems.Length < 2)
         {
-            GD.Print("Not enough items to combine.");
+            GD.Print("Not enough items to combine!");
             return;
         }
 
@@ -39,14 +38,14 @@ public partial class CombineButton : Button
         {
             if (RecipeMatches(recipe, inventoryItems))
             {
-                outPutInvGui.AddItemToInventory(recipe.Result, 1);
+                outputInvGui.AddItemToInventory(recipe.Result, 1);
 
-                foreach (var slot in inventoryGui.guiSlots)
+                foreach (var slot in combineSlotsInventoryGui.guiSlots)
                 {
-                    inventoryGui.TakeFromSlot(slot.inventorySlot.Index);
+                    combineSlotsInventoryGui.TakeFromSlot(slot.inventorySlot.Index);
                 }
 
-                GD.Print("Recipe combined!");
+                GD.Print("Items combined!");
                 return;
             }
         }

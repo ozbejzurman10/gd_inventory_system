@@ -8,11 +8,7 @@ public partial class InventoryGui : Control
     public Inventory inv { get; set; }
 
     [Export]
-    public ActiveItemView activeItemView { get; set; }
-
-    [Export]
     public SelectedItemContainer selectedItemContainer { get; set; }
-
 
     private GridContainer slotsContainer;
     public InventorySlotGUI[] guiSlots;

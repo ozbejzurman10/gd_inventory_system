@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ConsumableItem" load_steps=3 format=3 uid="uid://5hje3ehslqvj"]
+[gd_resource type="Resource" script_class="ConsumableItem" format=3 uid="uid://5hje3ehslqvj"]
 
 [ext_resource type="Script" uid="uid://bfmot17avp73k" path="res://Scripts/Inventory Item/ConsumableItem.cs" id="1_08ld8"]
 [ext_resource type="Texture2D" uid="uid://bjx3hux103gu" path="res://Art/Items/beer.png" id="1_mqyts"]

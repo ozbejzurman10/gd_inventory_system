@@ -1,20 +1,37 @@
-[gd_scene load_steps=11 format=3 uid="uid://dn7wqwdc77ybo"]
+[gd_scene format=3 uid="uid://dn7wqwdc77ybo"]
 
 [ext_resource type="Script" uid="uid://dm8x322qk237a" path="res://Scripts/Main.cs" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://ba5mcrhne12ba" path="res://Scenes/selected_item_container.tscn" id="2_kry3j"]
-[ext_resource type="Resource" uid="uid://dcbjdh80so6gd" path="res://Resources/Inv/test_inventory.tres" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://cbv36jc82mbsn" path="res://Scenes/combine_items_gui.tscn" id="4_6bp64"]
+[ext_resource type="Resource" uid="uid://dl4jqk5y6jxgl" path="res://Resources/Inv/main_inventory.tres" id="4_hptm8"]
 [ext_resource type="PackedScene" uid="uid://y185gasa2cn7" path="res://Scenes/inventory_gui.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://toegxvgldhck" path="res://Scenes/active_item_view.tscn" id="4_kry3j"]
-[ext_resource type="Resource" uid="uid://cliiss4by86mn" path="res://Resources/Inv/test_inv_2.tres" id="6_21xkr"]
-[ext_resource type="Resource" uid="uid://5hje3ehslqvj" path="res://Resources/Inventory Items/pir.tres" id="6_344ge"]
-[ext_resource type="Resource" uid="uid://rpenmcp44bj0" path="res://Resources/Inv/test_recipe.tres" id="7_ynf5e"]
-[ext_resource type="Resource" uid="uid://b01og77xfug80" path="res://Resources/Inv/pir_recipe.tres" id="8_hptm8"]
+[ext_resource type="Script" uid="uid://bpa5tnjdo0k45" path="res://Scripts/Inventory/InventorySlot.cs" id="6_ynf5e"]
+[ext_resource type="Script" uid="uid://42s8ux2ltcst" path="res://Scripts/Inventory/Inventory.cs" id="7_hptm8"]
+[ext_resource type="Resource" uid="uid://6xheaw12obt" path="res://Resources/Recipes/axe_recipe.tres" id="8_hptm8"]
+[ext_resource type="Resource" uid="uid://bf3srwjyooipr" path="res://Resources/Recipes/pir_recipe.tres" id="9_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://br1ffmvsr6nr5" path="res://Scenes/give_random_item.tscn" id="10_hptm8"]
 
-[node name="Main" type="Node2D"]
+[sub_resource type="Resource" id="Resource_d1ilt"]
+script = ExtResource("6_ynf5e")
+metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
+
+[sub_resource type="Resource" id="Resource_6iyac"]
+script = ExtResource("6_ynf5e")
+metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
+
+[sub_resource type="Resource" id="Resource_fdnlq"]
+script = ExtResource("7_hptm8")
+ItemSlots = [SubResource("Resource_d1ilt"), SubResource("Resource_6iyac")]
+metadata/_custom_type_script = "uid://42s8ux2ltcst"
+
+[node name="Main" type="Node2D" unique_id=1320723837]
 script = ExtResource("1_jjgbg")
 
-[node name="TextureRect" type="ColorRect" parent="."]
+[node name="Selected Item Container" parent="." unique_id=1802573604 instance=ExtResource("2_kry3j")]
+z_index = 5
+
+[node name="TextureRect" type="ColorRect" parent="." unique_id=1839760459]
 custom_minimum_size = Vector2(320, 180)
 offset_left = -44.0
 offset_top = -32.0
@@ -22,34 +39,44 @@ offset_right = 460.0
 offset_bottom = 268.0
 color = Color(0.23399998, 0.23399998, 0.26, 1)
 
-[node name="InventoryGUI" parent="." node_paths=PackedStringArray("activeItemView", "selectedItemContainer") instance=ExtResource("4_jjvhh")]
-inv = ExtResource("3_jjvhh")
-activeItemView = NodePath("../Active Item View")
+[node name="InventoryGUI" parent="." unique_id=1655979237 node_paths=PackedStringArray("selectedItemContainer") instance=ExtResource("4_jjvhh")]
+inv = ExtResource("4_hptm8")
 selectedItemContainer = NodePath("../Selected Item Container")
 
-[node name="Combine Items GUI" parent="." node_paths=PackedStringArray("selectedItemContainer") instance=ExtResource("4_6bp64")]
-offset_left = 259.0
+[node name="Combine Items GUI" parent="." unique_id=1821239136 node_paths=PackedStringArray("selectedItemContainer") instance=ExtResource("4_6bp64")]
+offset_left = 233.0
 offset_top = 201.0
-offset_right = 259.0
+offset_right = 233.0
 offset_bottom = 201.0
-inv = ExtResource("6_21xkr")
+inv = SubResource("Resource_fdnlq")
 selectedItemContainer = NodePath("../Selected Item Container")
 
-[node name="SlotContainer" parent="Combine Items GUI" index="0"]
+[node name="SlotContainer" parent="Combine Items GUI" index="0" unique_id=1724507322]
 columns = 4
 
-[node name="Combine Button" parent="Combine Items GUI" index="1" node_paths=PackedStringArray("outPutInvGui")]
-outPutInvGui = NodePath("../../InventoryGUI")
-drink = ExtResource("6_344ge")
-Recipes = Array[Object]([ExtResource("7_ynf5e"), ExtResource("8_hptm8")])
+[node name="Combine Button" parent="Combine Items GUI" index="1" unique_id=238913050 node_paths=PackedStringArray("combineSlotsInventoryGui", "outputInvGui")]
+combineSlotsInventoryGui = NodePath("..")
+outputInvGui = NodePath("../Output InventoryGUI")
+Recipes = Array[Object]([ExtResource("8_hptm8"), ExtResource("9_d1ilt")])
 
-[node name="Selected Item Container" parent="." instance=ExtResource("2_kry3j")]
+[node name="Output InventoryGUI" parent="Combine Items GUI" index="2" unique_id=1422392315 node_paths=PackedStringArray("selectedItemContainer")]
+selectedItemContainer = NodePath("../../Selected Item Container")
 
-[node name="Active Item View" parent="." instance=ExtResource("4_kry3j")]
-visible = false
-offset_left = 182.0
-offset_top = 16.0
-offset_right = 182.0
-offset_bottom = 16.0
+[node name="Active Item View" parent="." unique_id=1396155313 instance=ExtResource("4_kry3j")]
+offset_left = 158.0
+offset_top = 5.0
+offset_right = 158.0
+offset_bottom = 5.0
+
+[node name="ActiveItemGUI" parent="Active Item View" index="3" unique_id=462866715 node_paths=PackedStringArray("selectedItemContainer")]
+selectedItemContainer = NodePath("../../Selected Item Container")
+
+[node name="Give Random Item" parent="." unique_id=1935654562 node_paths=PackedStringArray("outputInv") instance=ExtResource("10_hptm8")]
+offset_left = 276.0
+offset_top = 122.0
+offset_right = 387.0
+offset_bottom = 153.0
+outputInv = NodePath("../InventoryGUI")
 
 [editable path="Combine Items GUI"]
+[editable path="Active Item View"]

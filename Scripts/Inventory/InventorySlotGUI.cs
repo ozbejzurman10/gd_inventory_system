@@ -3,7 +3,7 @@ using System;
 
 public partial class InventorySlotGUI : Button
 {
-    // Predstavlja en "prostor" ali SLOT v inventoriju ki lahko drži enega ali vec itemov iste vrste.
+    // predstavlja en "prostor" ali SLOT v inventoriju ki lahko drži enega ali vec itemov iste vrste
 
     private TextureRect icon;
     private Panel background;
@@ -12,6 +12,12 @@ public partial class InventorySlotGUI : Button
 
     [Signal]
     public delegate void SlotSelectedEventHandler(InventorySlotGUI slot);
+
+    [Signal]
+    public delegate void ItemRemovedFromSlotEventHandler(InventorySlotGUI slot);
+
+    [Signal]
+    public delegate void ItemInsertedIntoSlotEventHandler(InventorySlotGUI slot);
 
     public override void _Ready()
     {
@@ -47,6 +53,8 @@ public partial class InventorySlotGUI : Button
         // Nastavi texture in bg color glede na rarity itema
         icon.Texture = inventorySlot.item.Texture;
         SetRarityColor(inventorySlot.item.rarity);
+
+        EmitSignal(SignalName.ItemInsertedIntoSlot, this);
     }
 
     // Resetira slot, odstrani texture, item in resetira bg color
@@ -56,6 +64,8 @@ public partial class InventorySlotGUI : Button
         icon.Texture = null;
 
         SetRarityColor(InventoryItem.Rarity.None);
+
+        EmitSignal(SignalName.ItemRemovedFromSlot, this);
     }
 
     // Nastavi barvo ozadja glede na rarity itema

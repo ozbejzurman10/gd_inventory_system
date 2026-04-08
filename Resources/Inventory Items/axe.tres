@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponItem" format=3 uid="uid://d0psmlo55ofua"]
+
+[ext_resource type="Script" uid="uid://bhjn5dptx4a6p" path="res://Scripts/Inventory Item/WeaponItem.cs" id="1_o12g3"]
+[ext_resource type="Texture2D" uid="uid://dow82m5dimgh1" path="res://Art/Items/axe.png" id="1_ss3mf"]
+
+[resource]
+script = ExtResource("1_o12g3")
+Damage = 5
+Name = "Axe"
+Texture = ExtResource("1_ss3mf")
+rarity = 3
+metadata/_custom_type_script = "uid://bhjn5dptx4a6p"

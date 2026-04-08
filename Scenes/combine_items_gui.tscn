@@ -1,11 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbv36jc82mbsn"]
+[gd_scene format=3 uid="uid://cbv36jc82mbsn"]
 
 [ext_resource type="Script" uid="uid://dldx5a4a6bt8u" path="res://Scripts/Inventory/InventoryGui.cs" id="1_wqs5j"]
 [ext_resource type="PackedScene" uid="uid://coq6uf3rpeysb" path="res://Scenes/inventory_slot.tscn" id="2_u81ig"]
 [ext_resource type="Script" uid="uid://bbpi1hobwbtmq" path="res://Scripts/CombineButton.cs" id="3_i7h6x"]
 [ext_resource type="LabelSettings" uid="uid://bdukygm7owi0i" path="res://Resources/pixellabel.tres" id="4_k0h8v"]
+[ext_resource type="Script" uid="uid://42s8ux2ltcst" path="res://Scripts/Inventory/Inventory.cs" id="5_7u31h"]
+[ext_resource type="Script" uid="uid://bpa5tnjdo0k45" path="res://Scripts/Inventory/InventorySlot.cs" id="5_hjn2l"]
 
-[node name="Combine Items GUI" type="Control"]
+[sub_resource type="Resource" id="Resource_spipe"]
+script = ExtResource("5_hjn2l")
+metadata/_custom_type_script = "uid://bpa5tnjdo0k45"
+
+[sub_resource type="Resource" id="Resource_hjn2l"]
+script = ExtResource("5_7u31h")
+ItemSlots = [SubResource("Resource_spipe")]
+metadata/_custom_type_script = "uid://42s8ux2ltcst"
+
+[node name="Combine Items GUI" type="Control" unique_id=1812282534]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,31 +26,30 @@ grow_vertical = 2
 script = ExtResource("1_wqs5j")
 SlotScene = ExtResource("2_u81ig")
 
-[node name="SlotContainer" type="GridContainer" parent="."]
+[node name="SlotContainer" type="GridContainer" parent="." unique_id=1724507322]
 layout_mode = 0
-offset_right = 88.0
+offset_right = 76.0
 offset_bottom = 22.0
 pivot_offset = Vector2(44, 11)
-theme_override_constants/h_separation = 0
+theme_override_constants/h_separation = 32
 theme_override_constants/v_separation = 0
 columns = 5
 
-[node name="Inventory Slot" parent="SlotContainer" instance=ExtResource("2_u81ig")]
+[node name="Inventory Slot" parent="SlotContainer" unique_id=1835459150 instance=ExtResource("2_u81ig")]
 layout_mode = 2
 
-[node name="Inventory Slot2" parent="SlotContainer" instance=ExtResource("2_u81ig")]
+[node name="Inventory Slot2" parent="SlotContainer" unique_id=1128521773 instance=ExtResource("2_u81ig")]
 layout_mode = 2
 
-[node name="Combine Button" type="Button" parent="." node_paths=PackedStringArray("inventoryGui")]
+[node name="Combine Button" type="Button" parent="." unique_id=238913050]
 layout_mode = 0
-offset_left = 91.0
-offset_right = 155.0
+offset_left = 80.0
+offset_right = 144.0
 offset_bottom = 22.0
 pivot_offset = Vector2(32, 10)
 script = ExtResource("3_i7h6x")
-inventoryGui = NodePath("..")
 
-[node name="Label" type="Label" parent="Combine Button"]
+[node name="Label" type="Label" parent="Combine Button" unique_id=1051836791]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -54,3 +64,20 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Combine"
 label_settings = ExtResource("4_k0h8v")
+
+[node name="Output InventoryGUI" type="Control" parent="." unique_id=1422392315]
+anchors_preset = 0
+offset_left = 150.0
+offset_right = 172.0
+offset_bottom = 22.0
+script = ExtResource("1_wqs5j")
+inv = SubResource("Resource_hjn2l")
+SlotScene = ExtResource("2_u81ig")
+
+[node name="SlotContainer" type="GridContainer" parent="Output InventoryGUI" unique_id=298319992]
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 22.0
+
+[node name="Inventory Slot" parent="Output InventoryGUI/SlotContainer" unique_id=78764595 instance=ExtResource("2_u81ig")]
+layout_mode = 2

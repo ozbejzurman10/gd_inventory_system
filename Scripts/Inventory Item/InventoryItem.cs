@@ -7,7 +7,10 @@ public abstract partial class InventoryItem : Resource, IUsable
 	[Export]
 	public string Name { get; set; }
 
-	[Export]
+    [Export]
+    public string Description { get; set; } = "No description.";
+
+    [Export]
 	public Texture2D Texture { get; set; }
 
     // Se ni v uporabi

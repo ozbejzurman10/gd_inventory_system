@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://br1ffmvsr6nr5"]
+
+[ext_resource type="Script" uid="uid://cryuoj0tmqsjy" path="res://Scripts/GiveRandomItem.cs" id="1_4xljc"]
+
+[node name="Give Random Item" type="Button" unique_id=1935654562]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Give Random"
+script = ExtResource("1_4xljc")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CombineRecipe" format=3 uid="uid://bf3srwjyooipr"]
+
+[ext_resource type="Script" uid="uid://dakq17brsm23p" path="res://Scripts/CombineRecipe.cs" id="1_b8ny7"]
+[ext_resource type="Resource" uid="uid://ci3si5kndyga0" path="res://Resources/Inventory Items/diamond.tres" id="1_kfi2t"]
+[ext_resource type="Resource" uid="uid://5hje3ehslqvj" path="res://Resources/Inventory Items/pir.tres" id="2_l5f55"]
+
+[resource]
+script = ExtResource("1_b8ny7")
+Ingredients = Array[Object]([ExtResource("1_kfi2t"), ExtResource("1_kfi2t")])
+Result = ExtResource("2_l5f55")
+metadata/_custom_type_script = "uid://dakq17brsm23p"
