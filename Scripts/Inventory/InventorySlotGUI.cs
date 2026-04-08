@@ -8,7 +8,7 @@ public partial class InventorySlotGUI : Button
     private TextureRect icon;
     private Panel background;
     public InventorySlot inventorySlot = new InventorySlot();
-    private ShaderMaterial rainbowMat;
+    private readonly ShaderMaterial rainbowMat = new ShaderMaterial();
 
     [Signal]
     public delegate void SlotSelectedEventHandler(InventorySlotGUI slot);
@@ -27,8 +27,7 @@ public partial class InventorySlotGUI : Button
 
         // rainbow background shader effect
         var shader = GD.Load<Shader>("res://Shaders/rainbow_bg.gdshader");
-        rainbowMat = new ShaderMaterial();
-        rainbowMat.Shader = shader;
+        rainbowMat.Shader = GD.Load<Shader>("res://Shaders/rainbow_bg.gdshader");
 
 
         // Povezi signal za klik na slot

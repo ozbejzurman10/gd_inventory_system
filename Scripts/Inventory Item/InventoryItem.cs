@@ -56,4 +56,15 @@ public abstract partial class InventoryItem : Resource, IUsable
     {
         GD.Print($"{Name} destroyed!");
     }
+
+    public static bool operator ==(InventoryItem a, InventoryItem b)
+    {
+        if (a is null && b is null) return true;
+        if (a is null || b is null) return false;
+        return a.Name == b.Name;
+    }
+    public static bool operator !=(InventoryItem a, InventoryItem b)
+    {
+        return !(a == b);
+    }
 }
