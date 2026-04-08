@@ -58,6 +58,12 @@ public partial class CombineButton : Button
         if (items.Length != recipe.Ingredients.Length)
             return false;
 
+        foreach (InventoryItem item in items)
+        {
+            if (item == null)
+                return false;
+        }
+
         foreach (InventoryItem ingredient in recipe.Ingredients)
         {
             bool found = false;

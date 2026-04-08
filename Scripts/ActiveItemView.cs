@@ -6,6 +6,9 @@ public partial class ActiveItemView : Control
     [Export]
     private InventorySlotGUI activeItemSlot;
 
+    [Export]
+    private InventoryGui activeItemInvGui;
+
     private Button useItemButton;
     private InventoryItem activeItem;
     private Label itemNameLabel;
@@ -61,5 +64,11 @@ public partial class ActiveItemView : Control
         }
 
         activeItem.Use();
+
+        if (activeItem is ConsumableItem)
+        {
+            activeItemInvGui.TakeFromSlot(0);
+        }
+
     }
 }

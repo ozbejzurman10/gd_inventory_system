@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dui77hs7ds26n"
-path="res://.godot/imported/empty_potion.png-560019eb834e7b4b97f6bb2c95781b9d.ctex"
+uid="uid://bk73dciysia2d"
+path="res://.godot/imported/wheat.png-e0c5b1cfffd4c2e02686bd90f2876253.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Items/empty_potion.png"
-dest_files=["res://.godot/imported/empty_potion.png-560019eb834e7b4b97f6bb2c95781b9d.ctex"]
+source_file="res://Art/Items/wheat.png"
+dest_files=["res://.godot/imported/wheat.png-e0c5b1cfffd4c2e02686bd90f2876253.ctex"]
 
 [params]
 

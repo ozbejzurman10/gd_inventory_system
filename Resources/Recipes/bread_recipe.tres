@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CombineRecipe" format=3 uid="uid://dfnj7eg72cji8"]
+
+[ext_resource type="Script" uid="uid://dakq17brsm23p" path="res://Scripts/CombineRecipe.cs" id="1_2d7ew"]
+[ext_resource type="Resource" uid="uid://cbq21l8rntnj2" path="res://Resources/Inventory Items/wheat.tres" id="1_m8fm8"]
+[ext_resource type="Resource" uid="uid://bp4ifldpjry58" path="res://Resources/Inventory Items/bread.tres" id="2_farex"]
+
+[resource]
+script = ExtResource("1_2d7ew")
+Ingredients = Array[Object]([ExtResource("1_m8fm8"), ExtResource("1_m8fm8")])
+Result = ExtResource("2_farex")
+metadata/_custom_type_script = "uid://dakq17brsm23p"

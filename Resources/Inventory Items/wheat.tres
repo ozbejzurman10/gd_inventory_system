@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MaterialItem" format=3 uid="uid://cbq21l8rntnj2"]
+
+[ext_resource type="Texture2D" uid="uid://bk73dciysia2d" path="res://Art/Items/wheat.png" id="1_bsc77"]
+[ext_resource type="Script" uid="uid://chlbdlot5k8eh" path="res://Scripts/Inventory Item/MaterialItem.cs" id="1_patij"]
+
+[resource]
+script = ExtResource("1_patij")
+Name = "Wheat"
+Texture = ExtResource("1_bsc77")
+rarity = 1
+metadata/_custom_type_script = "uid://chlbdlot5k8eh"
