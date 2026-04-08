@@ -24,7 +24,6 @@ public partial class SelectedItemContainer : Control
         GD.Print("Selected item cleared.");
     }
 
-    // Make the item follow the mouse position
 
     public override void _Process(double delta)
     {

@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://toegxvgldhck"]
+[gd_scene load_steps=4 format=3 uid="uid://toegxvgldhck"]
 
-[ext_resource type="Script" uid="uid://do2txgivbures" path="res://Scripts/SelectedItemView.cs" id="1_2c2j1"]
+[ext_resource type="Script" uid="uid://do2txgivbures" path="res://Scripts/ActiveItemView.cs" id="1_2c2j1"]
 [ext_resource type="PackedScene" uid="uid://coq6uf3rpeysb" path="res://Scenes/inventory_slot.tscn" id="2_dakyv"]
+[ext_resource type="PackedScene" uid="uid://deacj23kwht30" path="res://Resources/active_item_gui.tscn" id="3_xkslr"]
 
-[node name="Selected Item View" type="Control"]
+[node name="Active Item View" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2c2j1")
 
-[node name="Preview Slot" parent="." instance=ExtResource("2_dakyv")]
+[node name="Active Slot" parent="." instance=ExtResource("2_dakyv")]
 layout_mode = 0
 offset_right = 22.0
 offset_bottom = 22.0
@@ -28,12 +29,18 @@ text = "Use Item"
 
 [node name="Item Name Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = -50.0
-offset_top = 97.0
-offset_right = 95.0
-offset_bottom = 120.0
+offset_left = 82.0
+offset_right = 227.0
+offset_bottom = 23.0
 pivot_offset = Vector2(73, 12)
 text = "Item Name"
 horizontal_alignment = 1
+
+[node name="ActiveItemGUI" parent="." instance=ExtResource("3_xkslr")]
+layout_mode = 1
+offset_left = 60.0
+offset_top = 23.0
+offset_right = 60.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="Use Item Button" to="." method="_on_use_item_button_pressed"]

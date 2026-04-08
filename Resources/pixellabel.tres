@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bdukygm7owi0i"]
+
+[ext_resource type="FontFile" uid="uid://dj7bbd32w677" path="res://Art/W95FA.otf" id="1_ffjek"]
+
+[resource]
+font = ExtResource("1_ffjek")
+font_size = 13

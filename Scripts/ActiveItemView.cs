@@ -1,15 +1,15 @@
 using Godot;
 using System;
 
-public partial class SelectedItemView : Control
+public partial class ActiveItemView : Control
 {
-    private InventorySlotGUI previewGuiSlot;
+    private InventorySlotGUI activeItemSlot;
     private Button useItemButton;
-    private InventoryItem selectedItem;
+    private InventoryItem activeItem;
     private Label itemNameLabel;
     public override void _Ready()
     {
-        previewGuiSlot = GetNode<InventorySlotGUI>("Preview Slot");
+        activeItemSlot = GetNode<InventorySlotGUI>("Active Slot");
         useItemButton = GetNode<Button>("Use Item Button");
         itemNameLabel = GetNode<Label>("Item Name Label");
 
@@ -18,8 +18,8 @@ public partial class SelectedItemView : Control
 
     public void UpdateDisplay(InventoryItem item, int amount)
     {
-        previewGuiSlot.InsertItem(item, amount);
-        selectedItem = item;
+        activeItemSlot.InsertItem(item, amount);
+        activeItem = item;
 
         if (item != null)
         {
@@ -31,12 +31,12 @@ public partial class SelectedItemView : Control
 
     public void UseSelectedItem()
     {
-        if (selectedItem == null)
+        if (activeItem == null)
         {
             GD.Print("No item selected to use!");
             return;
         }
 
-        selectedItem.Use();
+        activeItem.Use();
     }
 }

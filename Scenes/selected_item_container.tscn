@@ -5,10 +5,6 @@
 [node name="Selected Item Container" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 48.0
-offset_top = 74.0
-offset_right = 48.0
-offset_bottom = 74.0
 script = ExtResource("1_4imro")
 
 [node name="Icon" type="Sprite2D" parent="."]

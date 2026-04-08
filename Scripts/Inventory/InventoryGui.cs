@@ -8,7 +8,7 @@ public partial class InventoryGui : Control
     public Inventory inv { get; set; }
 
     [Export]
-    public SelectedItemView selectedItemView { get; set; }
+    public ActiveItemView activeItemView { get; set; }
 
     [Export]
     public SelectedItemContainer selectedItemContainer { get; set; }

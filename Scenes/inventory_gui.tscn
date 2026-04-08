@@ -13,24 +13,16 @@ grow_vertical = 2
 script = ExtResource("1_mcfc2")
 SlotScene = ExtResource("1_5b8qi")
 
-[node name="TextureRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(320, 180)
-layout_mode = 0
-offset_right = 320.0
-offset_bottom = 180.0
-color = Color(0.16820496, 0.054681063, 6.016344e-09, 1)
-
 [node name="SlotContainer" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 0
-offset_left = 14.0
-offset_top = 16.999998
-offset_right = 124.0
-offset_bottom = 197.0
-scale = Vector2(1.4, 1.4)
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 137.0
+offset_bottom = 224.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 5
+columns = 6
 
 [node name="Inventory Slot1" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
 layout_mode = 2
@@ -57,4 +49,157 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Inventory Slot9" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot10" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot11" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot12" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot13" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot14" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot15" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot16" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot17" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot18" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot19" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot20" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot21" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot22" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot23" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot24" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot25" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot26" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot27" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot28" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot29" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot30" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot31" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot32" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot33" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot34" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot35" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot36" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot37" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot38" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot39" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot40" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot41" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot42" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot43" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot44" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot45" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot46" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot47" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot48" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot49" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot50" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot51" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot52" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot53" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot54" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot55" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot56" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot57" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot58" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot59" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
+layout_mode = 2
+
+[node name="Inventory Slot60" parent="SlotContainer" instance=ExtResource("1_5b8qi")]
 layout_mode = 2

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://deacj23kwht30"]
+
+[ext_resource type="Script" uid="uid://dldx5a4a6bt8u" path="res://Scripts/Inventory/InventoryGui.cs" id="1_4ed0y"]
+[ext_resource type="PackedScene" uid="uid://coq6uf3rpeysb" path="res://Scenes/inventory_slot.tscn" id="1_f8466"]
+[ext_resource type="Script" uid="uid://42s8ux2ltcst" path="res://Scripts/Inventory/Inventory.cs" id="2_b8v03"]
+
+[sub_resource type="Resource" id="Resource_og7kv"]
+script = ExtResource("2_b8v03")
+metadata/_custom_type_script = "uid://42s8ux2ltcst"
+
+[node name="ActiveItemGUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ed0y")
+inv = SubResource("Resource_og7kv")
+SlotScene = ExtResource("1_f8466")
+
+[node name="SlotContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 22.0
+pivot_offset = Vector2(44, 11)
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+
+[node name="Inventory Slot" parent="SlotContainer" instance=ExtResource("1_f8466")]
+layout_mode = 2
