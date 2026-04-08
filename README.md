@@ -46,7 +46,7 @@ Projekt, ki prikazuje implementacijo inventory sistema v Godot 4.6.2.
 - Pritisni gumb **"Use Item"** za uporabo predmeta:
   - *Consumable:* izpiše koliko HP si prejel
   - *Weapon:* izpiše damage orožja
-  - *Material:* nič
+  - *Material:* izpiše da ta predmet ni uporaben
   - Po uporabi se consumable predmet izbriše iz slota
 
 ### Kombiniranje predmetov (spodaj desno)
