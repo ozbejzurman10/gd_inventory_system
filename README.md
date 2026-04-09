@@ -49,6 +49,9 @@ Projekt, ki prikazuje implementacijo inventory sistema v Godot 4.6.2.
   - *Material:* izpiše da ta predmet ni uporaben
   - Po uporabi se consumable predmet izbriše iz slota
 
+[Tehnična dokumentacija](https://github.com/ozbejzurman10/gd_inventory_system/blob/main/Tehni%C4%8Dna%20dokumentacija.pdf)
+[Poročilo testiranja]([https://github.com/ozbejzurman10/gd_inventory_system/blob/main/Tehni%C4%8Dna%20dokumentacija.pdf](https://github.com/ozbejzurman10/gd_inventory_system/blob/main/Poro%C4%8Dilo%20testiranja.pdf))
+
 ### Kombiniranje predmetov (spodaj desno)
 - Premakni **dva predmeta** v combinable slota (levi in desni slot spodaj)
 - Pritisni gumb **"Combine Items"**
