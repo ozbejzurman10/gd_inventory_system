@@ -12,6 +12,9 @@ public partial class CombineButton : Button
     [Export]
     public CombineRecipe[] Recipes { get; set; }
 
+    /// <summary>
+    /// Inicializira gumb za kombiniranje in poveze signal ob kliku.
+    /// </summary>
     public override void _Ready()
     {
         if (combineSlotsInventoryGui == null)
@@ -22,6 +25,9 @@ public partial class CombineButton : Button
         this.Pressed += OnCombinePressed;
     }
 
+    /// <summary>
+    /// Ob kliku preveri recepte in ob uspesnem ujemanju izdela rezultat.
+    /// </summary>
     private void OnCombinePressed()
     {
         if (outputInvGui.guiSlots[0].inventorySlot.item != null) return;
@@ -53,6 +59,9 @@ public partial class CombineButton : Button
         GD.Print("These items cannot be combined.");
     }
 
+    /// <summary>
+    /// Preveri, ali podani predmeti ustrezajo sestavinam izbranega recepta.
+    /// </summary>
     private bool RecipeMatches(CombineRecipe recipe, InventoryItem[] items)
     {
         if (items.Length != recipe.Ingredients.Length)

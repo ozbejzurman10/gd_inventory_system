@@ -13,6 +13,9 @@ public partial class ActiveItemView : Control
     private InventoryItem activeItem;
     private Label itemNameLabel;
     private Label itemDescLabel;
+    /// <summary>
+    /// Pripravi prikaz aktivnega predmeta in poveze potrebne signale.
+    /// </summary>
     public override void _Ready()
     {
         useItemButton = GetNode<Button>("Use Item Button");
@@ -26,6 +29,9 @@ public partial class ActiveItemView : Control
 
     }
 
+    /// <summary>
+    /// Posodobi ime in opis aktivnega predmeta, ko je v slot vstavljen predmet.
+    /// </summary>
     public void ItemInserted(InventorySlotGUI slot)
     {
         GD.Print("Updating active item display...");
@@ -37,8 +43,7 @@ public partial class ActiveItemView : Control
         {
             itemNameLabel.Text = slot.inventorySlot.item.Name;
 
-            itemDescLabel.Text = $"Description:\n{slot.inventorySlot.item.Description}\n" +
-                                 $"Rarity:\n{slot.inventorySlot.item.rarity}\n";
+            itemDescLabel.Text = $"Description:\n{slot.inventorySlot.item.Description}\n" + $"Rarity:\n{slot.inventorySlot.item.rarity}\n";
         }
 
         else 
@@ -48,6 +53,9 @@ public partial class ActiveItemView : Control
         }
     }
 
+    /// <summary>
+    /// Pocisti prikaz aktivnega predmeta, ko se slot izprazni.
+    /// </summary>
     public void ClearActiveItem(InventorySlotGUI slot)
     {
         activeItem = null;
@@ -55,6 +63,9 @@ public partial class ActiveItemView : Control
         itemDescLabel.Text = "";
     }
 
+    /// <summary>
+    /// Uporabi trenutno izbran predmet in pri potrosnem predmetu odstrani porabljeno enoto.
+    /// </summary>
     public void UseSelectedItem()
     {
 

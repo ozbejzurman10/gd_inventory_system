@@ -34,11 +34,17 @@ public abstract partial class InventoryItem : Resource, IUsable
     public static int TotalItemsCreated = 0;
 
     // Konstruktorji
+    /// <summary>
+    /// Ustvari nov predmet in poveca stevec ustvarjenih predmetov.
+    /// </summary>
     public InventoryItem()
     {
         TotalItemsCreated++;
     }
 
+    /// <summary>
+    /// Ustvari nov predmet z imenom in poveca stevec ustvarjenih predmetov.
+    /// </summary>
     public InventoryItem(string name)
     {
         Name = name;
@@ -46,6 +52,9 @@ public abstract partial class InventoryItem : Resource, IUsable
     }
 
     // Prazno. Vsak subclass implementira svojo verzijo
+    /// <summary>
+    /// Izvede uporabo predmeta. Konkretno vedenje dolocijo podrazredi.
+    /// </summary>
     public abstract void Use();
     public abstract string GetUseDescription();
     //GD.Print($"You used the item {Name}, Rairty: {rarity}");
@@ -57,12 +66,16 @@ public abstract partial class InventoryItem : Resource, IUsable
         GD.Print($"{Name} destroyed!");
     }
 
+    /// <summary>
+    /// Primerja dva predmeta po imenu in obravnava tudi null vrednosti.
+    /// </summary>
     public static bool operator ==(InventoryItem a, InventoryItem b)
     {
         if (a is null && b is null) return true;
         if (a is null || b is null) return false;
         return a.Name == b.Name;
     }
+    
     public static bool operator !=(InventoryItem a, InventoryItem b)
     {
         return !(a == b);

@@ -17,6 +17,9 @@ public partial class InventoryGui : Control
     [Export]
     public PackedScene SlotScene; // Kaze na invslotgui scene
     
+    /// <summary>
+    /// Inicializira GUI inventarja, pripravi slote in prikaze zacetne predmete.
+    /// </summary>
     public override void _Ready()
     {
         // Najdi GridContainer ki bo parent vseh slotov
@@ -38,6 +41,9 @@ public partial class InventoryGui : Control
     }
 
     // Nastavilo stevilo SlotGUI NODOV glede na stevilo slotov v inventarju
+    /// <summary>
+    /// Prilagodi stevilo GUI slotov glede na podano velikost inventarja.
+    /// </summary>
     private void ResizeSlots(int count)
     {
         int currentChildCount = slotsContainer.GetChildCount();
@@ -72,6 +78,9 @@ public partial class InventoryGui : Control
         }
     }
 
+    /// <summary>
+    /// Nastavi pravilne indekse vsem GUI slotom.
+    /// </summary>
     private void SetSlotIndexes()
     {
         for (int i = 0; i < guiSlots.Length; i++)
@@ -81,6 +90,9 @@ public partial class InventoryGui : Control
         }
     }
 
+    /// <summary>
+    /// Ob kliku na slot izvede logiko pobiranja, vstavljanja ali menjave izbranega predmeta.
+    /// </summary>
     private void SlotSelected(InventorySlotGUI slot)
     {
         // Poslji informacije o izbranem slotu v SelectedItemView
@@ -104,6 +116,9 @@ public partial class InventoryGui : Control
         }
     }
 
+    /// <summary>
+    /// Odstrani predmet iz GUI slota in isto spremembo zapise v podatkovni inventar.
+    /// </summary>
     public void TakeFromSlot(int index)
     {
         if (index >= 0 && index < guiSlots.Length)
@@ -113,6 +128,9 @@ public partial class InventoryGui : Control
         }
     }
 
+    /// <summary>
+    /// Vstavi podan predmet v izbrani slot in osvezi prikaz inventarja.
+    /// </summary>
     private void InsertItemToSlot(int index, InventoryItem item)
     {
         if (index >= 0 && index < guiSlots.Length)
@@ -122,6 +140,9 @@ public partial class InventoryGui : Control
         }
     }
 
+    /// <summary>
+    /// Zamenja trenutno izbran predmet s predmetom v kliknjenem slotu.
+    /// </summary>
     private void SwapSelectedItem(InventorySlotGUI slot)
     {
         InventoryItem tempItem = slot.inventorySlot.item;
@@ -138,6 +159,9 @@ public partial class InventoryGui : Control
         }
     }
 
+    /// <summary>
+    /// Posodobi vsebino vsebnika za trenutno izbran predmet.
+    /// </summary>
     private void SelectItem(InventoryItem item)
     {
         if (item != null)
@@ -153,6 +177,9 @@ public partial class InventoryGui : Control
 
 
     // Napolni inventory slote z itemi iz inventarja
+    /// <summary>
+    /// Napolni GUI slote s predmeti iz podatkovnega inventarja.
+    /// </summary>
     private void FillItems()
     {
         // Najprej pocisti vse slote nato dodaj nove iteme
@@ -177,6 +204,9 @@ public partial class InventoryGui : Control
         }
     }
 
+    /// <summary>
+    /// Vrne polje predmetov, ki so trenutno prikazani v GUI slotih.
+    /// </summary>
     public InventoryItem[] GetInventoryItems() {
         InventoryItem[] items = new InventoryItem[guiSlots.Length];
         for (int i = 0; i < guiSlots.Length; i++)
@@ -187,6 +217,9 @@ public partial class InventoryGui : Control
         return items;
     }
 
+    /// <summary>
+    /// Doda predmet v inventar in nato osvezi prikaz slotov.
+    /// </summary>
     public void AddItemToInventory(InventoryItem item, int amount)
     {
         inv.AddItem(item, amount);

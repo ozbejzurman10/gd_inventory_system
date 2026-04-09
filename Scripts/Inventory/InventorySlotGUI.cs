@@ -19,6 +19,9 @@ public partial class InventorySlotGUI : Button
     [Signal]
     public delegate void ItemInsertedIntoSlotEventHandler(InventorySlotGUI slot);
 
+    /// <summary>
+    /// Pridobi reference na nodes, pripravi vizualni material in poveze signale slota.
+    /// </summary>
     public override void _Ready()
     {
         // node refrences
@@ -37,6 +40,9 @@ public partial class InventorySlotGUI : Button
     }
 
     // Dodaj item v ta slotGUI
+    /// <summary>
+    /// Vstavi predmet v slot, posodobi ikono in barvo glede na redkost.
+    /// </summary>
     public void InsertItem(InventoryItem newItem, int newAmount)
     {
         // Dodaj item v InventorySlot resource
@@ -57,6 +63,9 @@ public partial class InventorySlotGUI : Button
     }
 
     // Resetira slot, odstrani texture, item in resetira bg color
+    /// <summary>
+    /// Pocisti slot, odstrani predmet in ponastavi videz ozadja.
+    /// </summary>
     public void ClearSlot()
     {
         inventorySlot.item = null;
@@ -68,6 +77,9 @@ public partial class InventorySlotGUI : Button
     }
 
     // Nastavi barvo ozadja glede na rarity itema
+    /// <summary>
+    /// Nastavi videz ozadja slota glede na redkost predmeta.
+    /// </summary>
     private void SetRarityColor(InventoryItem.Rarity rarity)
     {
         if (rarity == InventoryItem.Rarity.None)
@@ -105,6 +117,9 @@ public partial class InventorySlotGUI : Button
 
 
     // Poklici UseItem metodo ko zaznamo klic onPressed signala
+    /// <summary>
+    /// Ob kliku na gumb odda signal, da je bil ta slot izbran.
+    /// </summary>
     private void OnPressed()
     {
         // Poslji signal da je bil ta slot izbran

@@ -8,12 +8,18 @@ public partial class GiveRandomItem : Button
 
     private RandomNumberGenerator rng = new RandomNumberGenerator();
 
+    /// <summary>
+    /// Inicializira gumb in generator nakljucnih stevil.
+    /// </summary>
     public override void _Ready()
     {
         Pressed += OnPressed;
         rng.Randomize();
     }
 
+    /// <summary>
+    /// Izbere nakljucen predmet iz mape virov in ga doda v izhodni inventar.
+    /// </summary>
     private void OnPressed()
     {
         string folderPath = "res://Resources/Inventory Items/";

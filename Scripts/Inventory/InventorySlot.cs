@@ -8,6 +8,9 @@ public partial class InventorySlot : Resource
     public InventoryItem item { get; set; }
     public int amount = 0;
     private int index = -1;
+    /// <summary>
+    /// Indeks slota v inventarju. Dovoljene so samo nenegativne vrednosti.
+    /// </summary>
     public int Index {
         get { return index; }
         set {
@@ -19,6 +22,9 @@ public partial class InventorySlot : Resource
         } 
     }
 
+    /// <summary>
+    /// Ustvari prazen inventarni slot brez predmeta.
+    /// </summary>
     public InventorySlot()
     {
         item = null;

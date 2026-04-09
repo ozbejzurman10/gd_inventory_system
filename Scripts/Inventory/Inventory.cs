@@ -8,6 +8,10 @@ public partial class Inventory : Resource
     public InventorySlot[] ItemSlots { get; set; } = Array.Empty<InventorySlot>();
 
     // INDEKSER Inventory[0] namesto Inventory.ItemSlots[0]
+
+    /// <summary>
+    /// Vrne inventory slot na podanem indeksu ali null, ce je indeks neveljaven.
+    /// </summary>
     public InventorySlot this[int index]
     {
         get
@@ -21,7 +25,10 @@ public partial class Inventory : Resource
         }
     }
 
-    // Doda item v inventory resource. Najde prvi prosti slot
+    /// <summary>
+    /// Doda predmet v prvi prosti slot inventarja.
+    /// Izpise napako, ce je inventar poln.
+    /// </summary>
     public void AddItem(InventoryItem item, int amount)
     {
         // Dodaj item v prvi prosti slot
@@ -40,6 +47,10 @@ public partial class Inventory : Resource
         GD.PrintErr("Inventory FULL! No free slot available to add the item!");
     }
 
+    /// <summary>
+    /// Doda predmet v tocno dolocen slot, ce je ta prazen.
+    /// Pred dodajanjem preveri veljavnost indeksa.
+    /// </summary>
     public void AddItemToSlot(InventoryItem item, int amount, int index)
     {
         if (index < 0 || index >= ItemSlots.Length)
@@ -59,6 +70,9 @@ public partial class Inventory : Resource
         }
     }
 
+    /// <summary>
+    /// Pocisti izbran slot, odstrani predmet in kolicino ponastavi na nic.
+    /// </summary>
     public void ClearItemFromSlot(int index)
     {
         if (index < 0 || index >= ItemSlots.Length)

@@ -9,6 +9,9 @@ public partial class ConsumableItem : InventoryItem
 
     private const float MaxHealthRestore = 500;
 
+    /// <summary>
+    /// Uporabi potrosni predmet in omeji obnovitev zivljenja na najvisjo dovoljeno vrednost.
+    /// </summary>
     public override void Use()
 	{
 		if (HealthIncrease > MaxHealthRestore)
