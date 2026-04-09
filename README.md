@@ -4,7 +4,7 @@ Projekt, ki prikazuje implementacijo inventory sistema v Godot 4.6.2.
 
 [Tehnična dokumentacija](https://github.com/ozbejzurman10/gd_inventory_system/blob/main/Tehni%C4%8Dna%20dokumentacija.pdf)
 
-[Poročilo testiranja]([https://github.com/ozbejzurman10/gd_inventory_system/blob/main/Tehni%C4%8Dna%20dokumentacija.pdf])
+[Poročilo testiranja](https://github.com/ozbejzurman10/gd_inventory_system/blob/main/Tehni%C4%8Dna%20dokumentacija.pdf)
 
 ## Zahteve
 
